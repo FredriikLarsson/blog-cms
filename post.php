@@ -12,7 +12,12 @@
 </head>
 <body>
     <div class="container-main">
+        <!-- Content for header and sidebar components -->
         <?php
+            $menuLink1 = 'Om mig';
+            $menuLink2 = 'Hjälp';
+            $menuLink3 = 'Kontakta mig';
+            $headerTitle = 'Post titel';
             require_once('components/header.php');
         ?>
         <div class="container-image">

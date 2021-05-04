@@ -3,9 +3,11 @@
     <div class="header-top">
         <!-- Link to the homepage (landing page) -->
         <a href="/Projekt_Blogg/index.php" class="link-logotype"><span class="material-icons">home</span></a>
+        <!-- Header that should have different content on every page -->
         <?php
             echo '<h1 class="text-title" id="text-title">' . $headerTitle . '</h1>';
         ?>
+        <!-- Hamburger menu for sidebar -->
         <button class="button-menu" id="button-menu"><span class="material-icons">menu</span></button> 
     </div>
 
