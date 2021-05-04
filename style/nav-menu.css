@@ -1,0 +1,12 @@
+.nav-menu {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu button {
+    width: 50%;
+}
+
+#nav-button-3 {
+    display: none;
+}

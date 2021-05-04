@@ -1,0 +1,41 @@
+.menu-sidebar {
+    height: 100%;
+    outline: auto;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: black;
+    overflow-x: hidden;
+    padding: 2rem 0 0 0;
+    transition: 0.3s;
+}
+
+.menu-sidebar a {
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 1.8rem;
+    display: block;
+    transition: 0.3s;
+    color: white;
+}
+
+.menu-sidebar a:hover {
+    color: blue;
+}
+
+.menu-sidebar .button-menu-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#menu-link-3 {
+    display: none;
+}

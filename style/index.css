@@ -1,0 +1,58 @@
+@import url('header.css');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 2rem 0;
+}
+
+.container-main {
+    width: 85vw;
+}
+
+.list-news {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listitem-news {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0 0 0;
+}
+
+.listitem-image {
+    width: 95%;
+    height: auto;
+}
+
+.container-listitem-text {
+    width: 100%;
+}
+
+.container-listitem-text p {
+    padding: 1rem 0 0 1rem;
+    width: 80%;
+}
+
+.container-listitem-text h2 {
+    padding: 1rem 0 0 1rem;
+}
+
+.container-image {
+    display: flex;
+    justify-content: center;
+}

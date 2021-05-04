@@ -1,0 +1,22 @@
+@import url('nav-menu.css');
+@import url('sidebar.css');
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.link-logotype {
+    color: black;
+}
+
+.button-menu {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.button-menu:hover {
+    color: blue;
+}
