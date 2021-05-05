@@ -1,10 +1,8 @@
 <?php
 
-
-
 //Get the 10 latest post uploaded to the cms system
 function getLatestPosts() {
-    return 'SELECT * FROM posts ORDER BY created DESC LIMIT 10';
+    return 'SELECT posts.id, posts.title, images.filename FROM posts LEFT JOIN images ON posts.id=images.post_id AND images.type="title" ORDER BY posts.created DESC LIMIT 10';
 }
 
 //Get the 10 latest registered blogs
