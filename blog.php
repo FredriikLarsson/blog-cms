@@ -23,60 +23,10 @@
             require_once('components/header.php');
         ?>
         <ul class="list-news">
-            <li class="listitem-news">
-                <img src="resources/example.jpg" alt="" class="listitem-image">
-                <div class="container-listitem-text">
-                    <h2 class="listitem-heading">Heading</h2>
-                    <p class="listitem-para">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, voluptatum facilis! Accusantium earum vitae vero in itaque qui, maiores illum facere quia. Officia illum, vero dignissimos, culpa ex fugit laboriosam, dolores impedit necessitatibus vitae quam.
-                    </p>
-                </div>
-            </li>
-            <li class="listitem-news">
-                <img src="resources/example.jpg" alt="" class="listitem-image">
-                <div class="container-listitem-text">
-                    <h2 class="listitem-heading">Heading</h2>
-                    <p class="listitem-para">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, voluptatum facilis! Accusantium earum vitae vero in itaque qui, maiores illum facere quia. Officia illum, vero dignissimos, culpa ex fugit laboriosam, dolores impedit necessitatibus vitae quam.
-                    </p>
-                </div>
-            </li>
-            <li class="listitem-news">
-                <img src="resources/example.jpg" alt="" class="listitem-image">
-                <div class="container-listitem-text">
-                    <h2 class="listitem-heading">Heading</h2>
-                    <p class="listitem-para">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, voluptatum facilis! Accusantium earum vitae vero in itaque qui, maiores illum facere quia. Officia illum, vero dignissimos, culpa ex fugit laboriosam, dolores impedit necessitatibus vitae quam.
-                    </p>
-                </div>
-            </li>
-            <li class="listitem-news">
-                <img src="resources/example.jpg" alt="" class="listitem-image">
-                <div class="container-listitem-text">
-                    <h2 class="listitem-heading">Heading</h2>
-                    <p class="listitem-para">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, voluptatum facilis! Accusantium earum vitae vero in itaque qui, maiores illum facere quia. Officia illum, vero dignissimos, culpa ex fugit laboriosam, dolores impedit necessitatibus vitae quam.
-                    </p>
-                </div>
-            </li>
-            <li class="listitem-news">
-                <img src="resources/example.jpg" alt="" class="listitem-image">
-                <div class="container-listitem-text">
-                    <h2 class="listitem-heading">Heading</h2>
-                    <p class="listitem-para">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, voluptatum facilis! Accusantium earum vitae vero in itaque qui, maiores illum facere quia. Officia illum, vero dignissimos, culpa ex fugit laboriosam, dolores impedit necessitatibus vitae quam.
-                    </p>
-                </div>
-            </li>
-            <li class="listitem-news">
-                <img src="resources/example.jpg" alt="" class="listitem-image">
-                <div class="container-listitem-text">
-                    <h2 class="listitem-heading">Heading</h2>
-                    <p class="listitem-para">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, voluptatum facilis! Accusantium earum vitae vero in itaque qui, maiores illum facere quia. Officia illum, vero dignissimos, culpa ex fugit laboriosam, dolores impedit necessitatibus vitae quam.
-                    </p>
-                </div>
-            </li>
+            <?php
+                require_once('model/blogs_service.php');
+                viewBlogPosts($_GET['blogId']);
+            ?>
         </ul>
     </div>
 </body>

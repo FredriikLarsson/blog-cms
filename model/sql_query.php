@@ -17,7 +17,7 @@ function getBlog($blogId) {
 
 //Get posts from a specific blog
 function getBlogPosts($blogId) {
-    return 'SELECT * FROM posts WHERE blog_id=' . $blogId;
+    return 'SELECT posts.id, posts.title, images.filename FROM posts LEFT JOIN images ON posts.id=images.post_id AND images.type="title" WHERE blog_id=' . $blogId;
 }
 
 ?>
