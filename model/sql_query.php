@@ -20,4 +20,9 @@ function getBlogPosts($blogId) {
     return 'SELECT posts.id, posts.title, images.filename FROM posts LEFT JOIN images ON posts.id=images.post_id AND images.type="title" WHERE blog_id=' . $blogId;
 }
 
+//Get content about a specific post
+function getPost($postId) {
+    return 'SELECT posts.title, posts.created, posts.content, users.username, images.filename FROM posts INNER JOIN blogs ON posts.blog_id=blogs.id INNER JOIN users ON blogs.user_id=users.id INNER JOIN images ON blogs.user_id=users.id WHERE posts.id=' . $postId;
+}
+
 ?>

@@ -24,7 +24,7 @@
         ?>
         <ul class="list-news">
             <?php
-                require_once('model/blogs_service.php');
+                require_once('services/blog_service.php');
                 viewBlogPosts($_GET['blogId']);
             ?>
         </ul>

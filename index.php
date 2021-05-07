@@ -23,13 +23,13 @@
         ?>
         <ul class="list-news" id="list-news-bloggers">
             <?php
-                require_once('model/blogs_service.php');
+                require_once('services/news_service.php');
                 viewLatestBlogs();
             ?>
         </ul>
         <ul class="list-news" id="list-news-posts">
             <?php
-                require_once('model/blogs_service.php');
+                require_once('services/news_service.php');
                 viewLatestPosts();
             ?>
         </ul>

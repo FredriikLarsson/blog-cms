@@ -19,20 +19,21 @@
             $menuLink3 = 'Kontakta mig';
             $headerTitle = 'Post titel';
             require_once('components/header.php');
+            require_once('services/post_service.php');
         ?>
         <div class="container-image">
             <p class="text-post">
-                Författare: Fredrik Larsson <br>
-                Datum: 26/4-21
+                Författare: <?php echo $post['0']['username']; ?> <br>
+                <?php echo $post['0']['created']; ?>
             </p>
-            <img src="resources/example.jpg" alt="" class="image-post">
+            <img src="<?php echo $post['0']['filename']; ?>" alt="" class="image-post">
         </div>
         <div class="container-content">
             <div class="container-content-title">
-                <h1>Rubrik till posten</h1>
+                <h1><?php echo $post['0']['title']; ?></h1>
             </div>
             <div class="container-content-text">
-                <p class="content-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore vero perferendis sed incidunt explicabo impedit doloremque in provident qui, quidem beatae quod, officiis libero ut est quaerat. Excepturi, neque fugit.</p>
+                <p class="content-text"><?php echo $post['0']['content']; ?></p>
             </div>
         </div>
     </div>
