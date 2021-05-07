@@ -1,3 +1,4 @@
+<!-- Main navigation menu -->
 <nav class="nav-menu" id="nav-menu">
     <?php 
         echo '<button type="button" class="nav-button" id="nav-button-1">' . $navButton1 . '</button>';

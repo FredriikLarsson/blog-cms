@@ -7,14 +7,15 @@ const navButton3 = document.getElementById('nav-button-3'); //Button 3 in main n
 buttonMenu.addEventListener('click', openNav);
 buttonMenuClose.addEventListener('click', closeNav);
 window.addEventListener('load', function() {
-    menuLink3.style.display = 'block';
     navButton3.style.display = 'inline-block';
 })
 
+//View the sidebar menu by sliding it out from the side. 
 function openNav() {
     sideBar.style.width = '200px';
 }
 
+//Hide the sidebar menu
 function closeNav() {
     sideBar.style.width = '0';
 }

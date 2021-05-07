@@ -17,8 +17,6 @@
             $navButton1 = 'Senaste inlägg';
             $navButton2 = 'Nya bloggare';
             $navButton3 = '';
-            $menuLink1 = 'Logga in/Registrera';
-            $menuLink2 = 'Hjälp';
             require_once('components/header.php');
         ?>
         <ul class="list-news" id="list-news-bloggers">

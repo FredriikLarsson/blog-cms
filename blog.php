@@ -14,9 +14,6 @@
         <!-- Content for component header, navmenu and sidebar -->
         <?php
             $headerTitle = 'Blogg titel';
-            $menuLink1 = 'Om mig';
-            $menuLink2 = 'Hjälp';
-            $menuLink3 = 'Kontakta mig';
             $navButton1 = 'Visa alla';
             $navButton2 = 'Design';
             $navButton3 = 'Systemutveckling';
