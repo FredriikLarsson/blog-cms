@@ -11,15 +11,15 @@
 
 <body>
     <main class="container-main">
-        <form action="admin.php" class="form">
+        <form action="controllers/login_controller.inc.php" class="form" method="POST">
             <div class="container-input-textfields">
                 <label for="input-textfield-username">Användarnamn</label>
-                <input type="text" class="input-textfield" id="input-textfield-username">
+                <input type="text" class="input-textfield" name="username">
                 <label for="input-textfield-username">Lösenord</label>
-                <input type="text" class="input-textfield" id="input-textfield-username">
+                <input type="text" class="input-textfield" name="password">
                 <div class="container-buttons">
-                    <button value="login" id="button-login" class="button">Logga in</button>
-                    <button value="register" id="button-register" class="button">Registrera dig</button>
+                    <button name="button-login" id="button-login" class="button">Logga in</button>
+                    <button name="button-register" id="button-register" class="button">Registrera dig</button>
                 </div>
             </div>
         </form>

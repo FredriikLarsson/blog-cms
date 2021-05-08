@@ -4,6 +4,5 @@
     <?php
         echo '<a href="login.php" id="menu-link-1">Logga in/Registrera</a>';
         echo '<a href="admin.php" id="menu-link-2">Min blogg</a>';
-        echo '<a href="#" id="menu-link-3"></a>';
     ?>
 </div>

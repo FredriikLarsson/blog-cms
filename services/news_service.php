@@ -3,12 +3,6 @@
 require_once('model/sql_query.php');
 require_once('model/db.php');
 
-
-$db = db_connect();
-$query = getLatestPosts(); //sql query to get the 10 most recent created blogs
-$result = db_select($db, $query); //get an array with the 10 blogs
-console_log($result);
-
 /* view the 10 most recent created blogs on the cms system */
 function viewLatestBlogs() {
     $db = db_connect();

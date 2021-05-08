@@ -25,4 +25,14 @@ function getPost($postId) {
     return 'SELECT posts.title, posts.created, posts.content, users.username, images.filename FROM posts INNER JOIN blogs ON posts.blog_id=blogs.id INNER JOIN users ON blogs.user_id=users.id INNER JOIN images ON blogs.user_id=users.id WHERE posts.id=' . $postId;
 }
 
+//Get all users from the database
+function getAllUsers() {
+    return 'SELECT users.username, users.password FROM users';
+}
+
+//add new user to the database
+function addUser($username, $password) {
+    return 'INSERT INTO users (username, password) VALUES (\'' . $username . '\', \'' . $password . '\');';
+}
+
 ?>
