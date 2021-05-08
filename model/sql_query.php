@@ -35,4 +35,9 @@ function addUser($username, $password) {
     return 'INSERT INTO users (username, password) VALUES (\'' . $username . '\', \'' . $password . '\');';
 }
 
+//get a blog owned by a specific user
+function getUserBlog($userId) {
+    return 'SELECT * FROM blogs WHERE id=' . $userId;
+}
+
 ?>

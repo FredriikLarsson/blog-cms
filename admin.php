@@ -1,3 +1,10 @@
+<?php
+session_start();
+    if (!isset($_SESSION['userId'])) {
+        header('Location: http://localhost/Projekt_Blogg/login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +32,6 @@
         <ul>
             <?php 
                 require_once('services/blog_service.php');
-                
             ?>
         </ul>
     </main>
