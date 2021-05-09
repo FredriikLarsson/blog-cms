@@ -1,18 +1,18 @@
-<!-- Header that should exist on every page -->
+<!-- Header that should exist on many pages -->
 <header>
     <div class="header-top">
-        <!-- Link to the homepage (landing page) -->
+        <!-- Link to the homepage -->
         <a href="/Projekt_Blogg/index.php" class="link-logotype"><span class="material-icons">home</span></a>
-        <!-- Header that should have different content on every page -->
+        <!-- Header section that should have different content on most pages -->
         <?php
-            echo '<h1 class="text-title" id="text-title">' . $headerTitle . '</h1>';
+        echo '<h1 class="text-title" id="text-title">' . $headerTitle . '</h1>';
         ?>
         <!-- Hamburger menu for sidebar -->
-        <button class="button-menu" id="button-menu"><span class="material-icons">menu</span></button> 
+        <button class="button-menu" id="button-menu"><span class="material-icons">menu</span></button>
     </div>
 
     <?php
-        require_once('components/nav-menu.php');
-        require_once('components/sidebar.php');
+    require_once('components/nav-menu.php');
+    require_once('components/sidebar.php');
     ?>
 </header>

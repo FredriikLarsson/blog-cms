@@ -2,23 +2,23 @@
 
 require_once('../services/login_service.php');
 
-//Ifall användaren klickat på knappen "logga ut"
+//Check if user want to logout
 if (isset($_GET['logout'])) {
-    //Logga ut med webbläsaren från "min administrationssida"
+    //Logout browser from the admin page of the blog
     unset($_SESSION['userId']);
     header("Location: http://localhost/Projekt_Blogg");
 } else {
-    //Ifall en session redan existerar i webbläsaren
+    //Check if user is logged in
     if (isset($_SESSION['userId'])) {
-        //Ifall sessionens användarnamn existerar på servern
+        //Check if session user exists in the database
         if (checkSession($_SESSION['userId'])) {
             header('Location: http://localhost/Projekt_Blogg/admin.php');
         } else {
-            //Sessionen är inte giltig
+            //The session is not valid
             header('Location: http://localhost/login.php?sessionNotValid=true');
         }
     } else {
-        //Ingen existerande session finns
+        //No user is logged in (no session is active)
         header('Location: http://localhost/login.php?noSessionActive=true');
     }
 }

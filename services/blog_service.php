@@ -1,14 +1,19 @@
 <?php
 
-require_once('model/sql_query.php');
 require_once('model/db.php');
+require_once('model/sql_query.php');
 
-function viewBlogPosts($blogId) {
-    $db = db_connect();
-    $query = getBlogPosts($blogId);  //sql query to get all blog post from a blog
-    $blogPosts = db_select($db, $query); //get an array with the blogposts
+$db = db_connect();
+
+/* Generate all posts from a specific blog
+$param blogId = the id of the specific blog */
+function viewBlogPosts($blogId)
+{
+    global $db;
+    $query = getBlogPosts($blogId);  //sql query to get all blog posts from a blog
+    $blogPosts = db_select($db, $query); //array with the blogposts
     /* Create a li element for every post in the array of all the blogposts */
-    foreach($blogPosts as $value) {
+    foreach ($blogPosts as $value) {
         echo '<li class="listitem-news">
                 <a href=\'post.php?postId="' . $value['id'] . '"\' class="postLink">
                     <div class="container-image">
@@ -20,4 +25,15 @@ function viewBlogPosts($blogId) {
                 </a>
             </li>';
     }
+}
+
+/* Get the title of the blog
+$param blogId = the id of the specific blog
+$return blog title */
+function getBlogTitle($blogId)
+{
+    global $db;
+    $query = getBlog($blogId);  //information about a specific blog
+    $blog = db_select($db, $query);
+    return $blog[0]['title'];
 }

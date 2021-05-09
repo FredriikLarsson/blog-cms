@@ -1,9 +1,11 @@
 <?php
-    session_start();
+session_start();
+require_once('services/blog_service.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,24 +13,28 @@
     <link rel="stylesheet" href="style/blog.css">
     <script src="js/blog.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Välkommen till ... blogg</title>
+    <title>
+        <?php echo getBlogTitle($_GET['blogId']); ?>
+    </title>
 </head>
+
 <body>
     <div class="container-main" id="container-main">
-        <!-- Content for component header, navmenu and sidebar -->
         <?php
-            $headerTitle = 'Blogg titel';
-            $navButton1 = 'Visa alla';
-            $navButton2 = 'Design';
-            $navButton3 = 'Systemutveckling';
-            require_once('components/header.php');
+        /* Here is the page specific content that goes in to the header component */
+        $headerTitle = getBlogTitle($_GET['blogId']);
+        /* Here is the filtering alternatives of the blogs posts */
+        $navButton1 = 'Visa alla';
+        $navButton2 = 'Design';
+        $navButton3 = 'Systemutveckling';
+        require_once('components/header.php');
         ?>
         <ul class="list-news">
             <?php
-                require_once('services/blog_service.php');
-                viewBlogPosts($_GET['blogId']);
+            viewBlogPosts($_GET['blogId']);
             ?>
         </ul>
     </div>
 </body>
+
 </html>

@@ -1,12 +1,15 @@
 <?php
 session_start();
-    if (!isset($_SESSION['userId'])) {
-        header('Location: http://localhost/Projekt_Blogg/login.php');
-    }
+//Control if client is logged in (has a started session)
+if (!isset($_SESSION['userId'])) {
+    //If client is not logged in then redirect to login page 
+    header('Location: http://localhost/Projekt_Blogg/login.php');
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,24 +19,26 @@ session_start();
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Min blogg</title>
 </head>
+
 <body>
     <header class="header">
         <div class="container-header-child">
             <?php
-                $headerTitle = 'min blogg';
-                $navButton1 = 'inlägg'; 
-                $navButton2 = 'bilder'; 
-                $navButton3 = ''; 
-                require_once('components/header.php'); 
+            /* Here is the page specific content that goes in to the header component */
+            $headerTitle = 'min blogg';
+            $navButton1 = 'inlägg';
+            $navButton2 = 'bilder';
+            $navButton3 = '';
+            /* Header component */
+            require_once('components/header.php');
             ?>
         </div>
     </header>
     <main class="main">
         <ul>
-            <?php 
-                require_once('services/blog_service.php');
-            ?>
+            <!-- Here should all blog post be generated -->
         </ul>
     </main>
 </body>
+
 </html>
