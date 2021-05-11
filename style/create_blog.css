@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container-main {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+}
+
+.container-buttons {
+    display: flex;
+}
+
+.button {
+    flex-grow: 1;
+}

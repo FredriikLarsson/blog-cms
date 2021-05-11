@@ -5,7 +5,7 @@
     <?php
     /* Checks if user is logged in */
     if (isset($_SESSION['userId'])) {
-        echo '<a href="admin.php" id="menu-link-blog">Min blogg</a>';
+        echo '<a href="controllers/admin_controller.inc.php" id="menu-link-blog">Min blogg</a>';
         echo '<a href="controllers/admin_controller.inc.php?logout=true" id="menu-link-logout">Logga ut</a>';
         /* if user is not logged in */
     } else {

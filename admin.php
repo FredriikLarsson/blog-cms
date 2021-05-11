@@ -1,9 +1,12 @@
 <?php
 session_start();
+require_once('services/blog_service.php');
 //Control if client is logged in (has a started session)
 if (!isset($_SESSION['userId'])) {
     //If client is not logged in then redirect to login page 
     header('Location: http://localhost/Projekt_Blogg/login.php');
+} else if (getUserBlog($_SESSION['userId']) === false) {
+    header('Location: http://localhost/Projekt_Blogg/create_blog.php');
 }
 ?>
 

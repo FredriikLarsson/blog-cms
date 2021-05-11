@@ -33,12 +33,18 @@ function getBlogPosts($blogId)
 //Get information about a specific post
 function getPost($postId)
 {
-    return 'SELECT posts.title, posts.created, posts.content, users.username, images.filename FROM posts INNER JOIN blogs ON posts.blog_id=blogs.id INNER JOIN users ON blogs.user_id=users.id INNER JOIN images ON blogs.user_id=users.id WHERE posts.id=' . $postId;
+    return 'SELECT posts.title, posts.created, posts.content, users.username, images.filename FROM posts 
+    INNER JOIN blogs ON posts.blog_id=blogs.id INNER JOIN users ON blogs.user_id=users.id INNER JOIN images ON blogs.user_id=users.id WHERE posts.id=' . $postId;
 }
 
 
 
 /* BLOGS */
+
+//Get all the blogs on the platform
+function getAllBlogs() {
+    return 'SELECT title FROM blogs';
+}
 
 //Get the 10 latest registered blogs
 function getLatestBlogs()
@@ -53,7 +59,14 @@ function getBlog($blogId)
 }
 
 //get blog that is owned by a specific user
-function getUserBlog($userId)
+function selectUserBlog($userId)
 {
     return 'SELECT * FROM blogs WHERE id=' . $userId;
+}
+
+//add a new blog to the database
+function addBlog($title, $presentation, $image, $created, $userId)
+{
+    return 'INSERT INTO blogs (title, presentation, image, created, user_id) 
+    VALUES (\'' . $title . '\', \'' . $presentation . '\', \'' . $image . '\', \'' . $created . '\', \'' . $userId . '\');';
 }

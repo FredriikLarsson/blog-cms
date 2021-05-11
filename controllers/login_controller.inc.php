@@ -14,7 +14,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])) {
             //User credentials is not valid
             header("Location: http://localhost/Projekt_Blogg/login.php?invalidCredentials=true");
         }
-        //Register a new user
+    //Register a new user
     } elseif (isset($_POST['button-register'])) {
         //Create a new user
         $isCreated = createUser($_POST['username'], $_POST['password']);
