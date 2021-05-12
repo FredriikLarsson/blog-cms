@@ -22,7 +22,7 @@ require_once('services/blog_service.php');
     <div class="container-main" id="container-main">
         <?php
         /* Here is the page specific content that goes in to the header component */
-        $headerTitle = getBlogTitle($_GET['blogId']);
+        $headerTitle = 'test';
         /* Here is the filtering alternatives of the blogs posts */
         $navButton1 = 'Visa alla';
         $navButton2 = 'Design';
@@ -31,7 +31,7 @@ require_once('services/blog_service.php');
         ?>
         <ul class="list-news">
             <?php
-            viewBlogPosts($_GET['blogId']);
+            //viewBlogPosts($_GET['blogId']);
             ?>
         </ul>
     </div>

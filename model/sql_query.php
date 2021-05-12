@@ -14,6 +14,12 @@ function addUser($username, $password)
     return 'INSERT INTO users (username, password) VALUES (\'' . $username . '\', \'' . $password . '\');';
 }
 
+/*get user information 
+@param username = username of user, not user_id*/
+function getUser($username)
+{
+    return 'SELECT * FROM users WHERE username=\'' . $username . '\'';
+}
 
 
 /* POSTS */
@@ -42,7 +48,8 @@ function getPost($postId)
 /* BLOGS */
 
 //Get all the blogs on the platform
-function getAllBlogs() {
+function getAllBlogs()
+{
     return 'SELECT title FROM blogs';
 }
 
