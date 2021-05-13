@@ -68,7 +68,7 @@ function getBlog($blogId)
 //get blog that is owned by a specific user
 function selectUserBlog($userId)
 {
-    return 'SELECT * FROM blogs WHERE id=' . $userId;
+    return 'SELECT * FROM blogs INNER JOIN users ON blogs.user_id=users.id WHERE users.username=\'' . $userId . '\'';
 }
 
 //add a new blog to the database
