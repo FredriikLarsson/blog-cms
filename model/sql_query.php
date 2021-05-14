@@ -50,7 +50,7 @@ function getPost($postId)
 //Get all the blogs on the platform
 function getAllBlogs()
 {
-    return 'SELECT title FROM blogs';
+    return 'SELECT * FROM blogs';
 }
 
 //Get the 10 latest registered blogs
@@ -68,7 +68,7 @@ function getBlog($blogId)
 //get blog that is owned by a specific user
 function selectUserBlog($userId)
 {
-    return 'SELECT * FROM blogs INNER JOIN users ON blogs.user_id=users.id WHERE users.username=\'' . $userId . '\'';
+    return 'SELECT blogs.id, blogs.title, blogs.presentation, blogs.image, blogs.created FROM blogs INNER JOIN users ON blogs.user_id=users.id WHERE users.username=\'' . $userId . '\'';
 }
 
 //add a new blog to the database
@@ -77,3 +77,20 @@ function addBlog($title, $presentation, $image, $created, $userId)
     return 'INSERT INTO blogs (title, presentation, image, created, user_id) 
     VALUES (\'' . $title . '\', \'' . $presentation . '\', \'' . $image . '\', \'' . $created . '\', \'' . $userId . '\');';
 }
+
+
+
+/* IMAGE */
+//Add a new image to a specific blog
+function insertNewImage($filename, $description, $created, $blogId) 
+{
+    return 'INSERT INTO images (filename, description, created, blog_id)
+    VALUES (\'' . $filename . '\', \'' . $description . '\', \'' . $created . '\', \'' . $blogId . '\');';
+}
+
+//get all images for a specific blog
+function selectAllBlogImages($blogId) 
+{
+    return 'SELECT * FROM images WHERE blog_id_=' . $blogId;
+}
+

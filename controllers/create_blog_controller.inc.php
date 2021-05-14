@@ -14,7 +14,7 @@ if (!empty($title)) {
     $userId = getUserId($_SESSION['userId']); //get user_id (session userId = database username)
     //If blog got created without a problem
     if (createblog($title, $presentation, $imageFilePath, $userId)) {
-        header("Location: http://localhost/Projekt_Blogg/blog.php");
+        header("Location: http://localhost/Projekt_Blogg/admin.php");
     } else {
         //A similar blog already exists and couldnt be created
         header("Location: http://localhost/Projekt_Blogg/create_blog.php?error=blogAlreadyExists=true");

@@ -17,7 +17,12 @@ if (isset($_GET['logout'])) {
             if (getUserBlog($_SESSION['userId']) === false) {
                 header('Location: http://localhost/Projekt_Blogg/create_blog.php');
             } else {
-                header('Location: http://localhost/Projekt_Blogg/admin.php');
+                //In case user want to view his images or view his blog with all posts
+                if ($_GET['images'] == true) {
+                    header('Location: http://localhost/Projekt_Blogg/images.php');
+                } else {
+                    header('Location: http://localhost/Projekt_Blogg/admin.php');
+                }
             }
         } else {
             //The session is not valid
