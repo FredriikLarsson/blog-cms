@@ -82,15 +82,26 @@ function addBlog($title, $presentation, $image, $created, $userId)
 
 /* IMAGE */
 //Add a new image to a specific blog
-function insertNewImage($filename, $description, $created, $blogId) 
+function insertNewImage($filename, $description, $created, $blogId)
 {
     return 'INSERT INTO images (filename, description, created, blog_id)
     VALUES (\'' . $filename . '\', \'' . $description . '\', \'' . $created . '\', \'' . $blogId . '\');';
 }
 
 //get all images for a specific blog
-function selectAllBlogImages($blogId) 
+function selectAllBlogImages($blogId)
 {
     return 'SELECT * FROM images WHERE blog_id_=' . $blogId;
 }
 
+//delete a image from the database
+function deleteBlogImage($imageId)
+{
+    return 'DELETE FROM images WHERE id=' . $imageId;
+}
+
+//Get one image
+function selectImage($imageId)
+{
+    return 'SELECT * FROM images WHERE id=' . $imageId;
+}
