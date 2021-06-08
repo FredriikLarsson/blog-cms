@@ -23,7 +23,7 @@ function viewAllImages($blogId)
                         <form action="controllers/image_controller.inc.php" method="POST">
                             <label for="input-textfield-alt-text">Ändra alt-text</label>
                             <input type="text" class="input-textfield" name="alt-text">
-                            <button type="submit" class="button_ok" name="button_edit--confirm" value="' . $value['id'] . '">OK</button>
+                            <button type="submit" class="button_ok" name="edit-image" value="' . $value['id'] . '">OK</button>
                         </form>
                     </div>
                 </li>';

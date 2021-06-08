@@ -17,7 +17,7 @@
                 <label for="input-textfield-blog-title">Blogg titel</label>
                 <input type="text" class="input-textfield" name="blog-title" id="input-textfield-blog-title">
                 <label for="input-textfield-blog-presentation">Beskriv din blogg</label>
-                <textarea name="blog-presentation" id="input-textfield-blog-presentation" cols="30" rows="10" class="input-textfield"></textarea>
+                <textarea name="blog-description" id="input-textfield-blog-presentation" cols="30" rows="10" class="input-textfield"></textarea>
                 <label for="input-file-image">Ladda upp en bild</label>
                 <input type="file" class="input-textfield" name="blog-image" id="input-file-image">
                 <p id="upload-message"></p>
