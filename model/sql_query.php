@@ -105,3 +105,8 @@ function selectImage($imageId)
 {
     return 'SELECT * FROM images WHERE id=' . $imageId;
 }
+
+function alterImageText($imageId, $altText) 
+{
+    return 'UPDATE images SET description =\'' . $altText . '\' WHERE id=' . $imageId;
+}

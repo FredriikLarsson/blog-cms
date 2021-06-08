@@ -18,7 +18,14 @@ function viewAllImages($blogId)
                         <img src="' . $value['filename'] . '" alt"" class="image-list__item-image">
                     </div>
                     <button type="button" name="button_delete" class="image-list__item-button--delete" value="' . $value['id'] . '">Ta bort</button>
-                    <button type="button" class="image-list__item-button--edit">Redigera</button>
+                    <button type="button" class="image-list__item-button--edit" value="' . $value['id'] . '">Redigera</button>
+                    <div class="image-list__edit-form" id="edit--' . $value['id'] . '">
+                        <form action="controllers/image_controller.inc.php" method="POST">
+                            <label for="input-textfield-alt-text">Ändra alt-text</label>
+                            <input type="text" class="input-textfield" name="alt-text">
+                            <button type="submit" class="button_ok" name="button_edit--confirm" value="' . $value['id'] . '">OK</button>
+                        </form>
+                    </div>
                 </li>';
     }
 }
@@ -49,6 +56,20 @@ function deleteImage($imageId)
     if (file_exists($_SERVER['DOCUMENT_ROOT'] . $filename)) {
         unlink($_SERVER['DOCUMENT_ROOT'] . $filename); //delete image from the server filesystem
         db_query($db, $query); //delete an image from the database
+        return true;
+    } else {
+        //The image does not exist on the server filesystem
+        return false;
+    }
+}
+
+function changeImage($imageId, $altText) {
+    global $db;
+    $query = alterImageText($imageId, $altText);
+    $query_filepath = selectImage($imageId); //sql query for getting one image
+    $filename = db_select($db, $query_filepath)[0]['filename']; //get the image filename
+    if (file_exists($_SERVER['DOCUMENT_ROOT'] . $filename)) {
+        db_query($db, $query);
         return true;
     } else {
         //The image does not exist on the server filesystem

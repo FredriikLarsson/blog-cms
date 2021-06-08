@@ -96,3 +96,7 @@ body {
   .form-container .btn:hover, .open-button:hover {
     opacity: 1;
   }
+
+  .image-list__edit-form {
+    display: none;
+  }
