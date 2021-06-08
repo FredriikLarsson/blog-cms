@@ -13,6 +13,7 @@ if (!isset($_SESSION['userId'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +23,7 @@ if (!isset($_SESSION['userId'])) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Mina bilder</title>
 </head>
+
 <body>
     <header class="header">
         <div class="container-header-child">
@@ -38,16 +40,28 @@ if (!isset($_SESSION['userId'])) {
     </header>
     <main class="main">
         <div class="main__button">
-            <button type="button">Ladda upp bild</button>
+            <button type="button" id="button_form">Ladda upp bild</button>
+        </div>
+        <div class="form-popup" id="myForm">
+            <form class="form-container" id="form" method="POST" enctype="multipart/form-data">
+                <h1>Ny bild</h1>
+                <label for="input-file-image">Ladda upp en bild</label>
+                <input type="file" class="input-textfield" name="image" id="input-file-image" required>
+                <label for="alt_text"><b>Alternative text</b></label>
+                <input type="text" placeholder="Alt text" name="alt_text" id="alt_text" required>
+                <button type="submit" name="button_submit" class="btn" id="button_upload">Ladda upp</button>
+                <button type="button" class="btn cancel" id="button_cancel">Close</button>
+            </form>
         </div>
         <ul class="main__list">
-            <?php 
-                require_once('services/image_service.php');
-                $blog = getUserBlog($_SESSION['userId']); //Get the blog from which the list of images is presented from
-                $blogId= $blog['id']; //Get the id of the blog in the database
-                viewAllImages($blogId); //Generate all li items for every image on the blog
+            <?php
+            require_once('services/image_service.php');
+            $blog = getUserBlog($_SESSION['userId']); //Get the blog from which the list of images is presented from
+            $blogId = $blog['id']; //Get the id of the blog in the database
+            viewAllImages($blogId); //Generate all li items for every image on the blog
             ?>
         </ul>
     </main>
 </body>
+
 </html>

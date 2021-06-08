@@ -41,26 +41,28 @@ if (getUserBlog($_SESSION['userId']) == false) {
 } else {
     /* If user does have a blog */
     /* Move image that is sent in through a form, to a specific permanently location on the server */
-    if (file_exists($_FILES['blog-image']['tmp_name'])) {
-        $tmp_file = $_FILES['blog-image']['tmp_name']; //Temp filename on server for sent in image through post request
+    if (file_exists($_FILES['image']['tmp_name'])) {
+        $tmp_file = $_FILES['image']['tmp_name']; //Temp filename on server for sent in image through post request
         $upload_dir = "../uploads/"; //Directory on server that image is going to be stored in
-        $target_file = basename($_FILES['blog-image']['name']); //Image name on the server when stored correctly 
+        $target_file = basename($_FILES['image']['name']); //Image name on the server when stored correctly 
         $filePath = $upload_dir . $target_file; //Filepath that image is going to get on the server
         $blogId = getUserBlog($_SESSION['userId'])['id']; //Get blogId to which blog the image is going to be uploaded to
         //check if image upload went through
         if (move_uploaded_file($tmp_file, $upload_dir . $target_file)) {
+            $upload_dir_absolute = "/Projekt_Blogg/uploads/"; //Directory on server that image is going to be stored in
+            $imageFilePath = $upload_dir_absolute . $target_file;
             //Check if user sent in a description to the image
-            if (!isset($_POST['description'])) {
+            if (!isset($_POST['alt_text'])) {
                 $description = '';
             } else {
-                $description = $_POST['description'];
+                $description = $_POST['alt_text'];
             }
-            addNewImage($blogId, $filePath, $description);
+            addNewImage($blogId, $imageFilePath, $description);
             $message = "Filen har laddats upp.";
             echo json_encode($message);
         } else {
             //Something went wrong during the upload
-            $error = $_FILES['blog-image']['error'];
+            $error = $_FILES['image']['error'];
             $message = $upload_errors[$error];
             echo json_encode($message);
         }

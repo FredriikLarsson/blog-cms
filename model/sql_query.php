@@ -84,7 +84,7 @@ function addBlog($title, $presentation, $image, $created, $userId)
 //Add a new image to a specific blog
 function insertNewImage($filename, $description, $created, $blogId)
 {
-    return 'INSERT INTO images (filename, description, created, blog_id)
+    return 'INSERT INTO images (filename, description, created, blog_id_)
     VALUES (\'' . $filename . '\', \'' . $description . '\', \'' . $created . '\', \'' . $blogId . '\');';
 }
 
