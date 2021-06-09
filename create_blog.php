@@ -20,8 +20,8 @@
                 <textarea name="blog-description" id="input-textfield-blog-presentation" cols="30" rows="10" class="input-textfield"></textarea>
                 <label for="input-file-image">Ladda upp en bild</label>
                 <input type="file" class="input-textfield" name="blog-image" id="input-file-image">
-                <p id="upload-message"></p>
-                <button name="button-upload" type="button" id="button-upload" class="button">Ladda upp</button>
+                <p id="message--upload"></p>
+                <button name="button-upload" type="button" id="button--upload" class="button">Ladda upp</button>
                 <div class="container-buttons">
                     <button name="button-new-blog" type="submit" id="button-new-blog" class="button">Skapa ny blogg</button>
                 </div>

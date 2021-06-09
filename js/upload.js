@@ -1,6 +1,6 @@
 const form = document.getElementById('form'); //Form with input to create a new blog
-const uploadButton = document.getElementById('button-upload'); //button to upload image
-const uploadMessage = document.getElementById('upload-message'); //where upload error messages is presented
+const uploadButton = document.getElementById('button--upload'); //button to upload image
+const uploadMessage = document.getElementById('message--upload'); //where upload error messages is presented
 
 uploadButton.addEventListener('click', function () {
     //Send image to server

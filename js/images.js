@@ -1,27 +1,24 @@
-const buttonMenu = document.getElementById('button-menu'); //Hamburger button for sidebar
-const sideBar = document.getElementById('menu-sidebar'); //Sidebar menu
-const buttonMenuClose = document.getElementById('button-menu-close'); //Close button for sidebar
-const navMenu = document.getElementById('nav-menu'); //Main navigation menu
-const imageListButtonDelete = document.getElementsByClassName('image-list__item-button--delete'); //Image-list items delete buttons
-const imageListButtonEdit = document.getElementsByClassName('image-list__item-button--edit'); //Image-list items edit buttons
-const buttonCancel = document.getElementById('button_cancel'); //Cancel button for add image popup
-const buttonForm = document.getElementById('button_form'); //Button to show add image popup
-const buttonUpload = document.getElementById('button_upload'); //Button to upload a new image
+import {buttonMenu, sideBar, buttonMenuClose, navMenu, openNav, closeNav} from '/Projekt_Blogg/js/header.js';
+
+const deleteButton = document.getElementsByClassName('image-list__item-button--delete'); //Image-list items delete buttons
+const editButton = document.getElementsByClassName('image-list__item-button--edit'); //Image-list items edit buttons
+const hideFormButton = document.getElementById('button_cancel'); //Cancel button for add image popup
+const viewFormButton = document.getElementById('button_form'); //Button to show add image popup
+const uploadButton = document.getElementById('button_upload'); //Button to upload a new image
 const form = document.getElementById('form'); //Form with image information
-const imageListButtonOK = document.getElementsByClassName('button_ok'); //complete text edit of image alt-text
 
 buttonMenu.addEventListener('click', openNav);
 buttonMenuClose.addEventListener('click', closeNav);
-buttonCancel.addEventListener('click', closeForm);
-buttonForm.addEventListener('click', openForm);
+hideFormButton.addEventListener('click', closeForm);
+viewFormButton.addEventListener('click', openForm);
 
 /* All delete buttons to every image in image-list */
-Array.from(imageListButtonDelete).forEach(element => {
+Array.from(deleteButton).forEach(element => {
     element.addEventListener('click', function () {
-        $imageId = element.value; //id of the image
+        let imageId = element.value; //id of the image
         fetch('/Projekt_Blogg/controllers/image_controller.inc.php', {
             method: 'POST',
-            body: JSON.stringify($imageId)
+            body: JSON.stringify(imageId)
         }).then(
             response => response.text()
         ).then(
@@ -32,15 +29,15 @@ Array.from(imageListButtonDelete).forEach(element => {
     })
 })
 
-
-Array.from(imageListButtonEdit).forEach(element => {
+/* All edit buttons to every image in image-list */
+Array.from(editButton).forEach(element => {
     element.addEventListener('click', function () {
-        $editForm = 'edit--' + element.value;
-        document.getElementById($editForm).style.display = 'block';
+        let editForm = 'edit--' + element.value; //id of the form at the specific image chosen to edit
+        document.getElementById(editForm).style.display = 'block';
     })
 })
 
-buttonUpload.addEventListener('click', function () {
+uploadButton.addEventListener('click', function () {
     //Send image to server
     fetch('/Projekt_Blogg/services/upload_service.php', {
         method: 'POST',
@@ -56,16 +53,6 @@ buttonUpload.addEventListener('click', function () {
 window.addEventListener('load', function () {
     navMenu.style.display = 'none';
 })
-
-//View the sidebar menu 
-function openNav() {
-    sideBar.style.width = '200px';
-}
-
-//Hide the sidebar menu
-function closeNav() {
-    sideBar.style.width = '0';
-}
 
 //View the add image popup
 function openForm() {
