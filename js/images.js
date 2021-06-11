@@ -1,4 +1,4 @@
-import {buttonMenu, sideBar, buttonMenuClose, navMenu, openNav, closeNav} from '/Projekt_Blogg/js/header.js';
+import {buttonMenu, sideBar, buttonMenuClose, navMenu, openNav, closeNav} from '/~frelab-8/Projekt_Blogg/js/header.js';
 
 const deleteButton = document.getElementsByClassName('image-list__item-button--delete'); //Image-list items delete buttons
 const editButton = document.getElementsByClassName('image-list__item-button--edit'); //Image-list items edit buttons

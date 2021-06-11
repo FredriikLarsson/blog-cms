@@ -14,16 +14,16 @@ $userId = getUserId($_SESSION['userId']); //get user id (session userId = databa
 //check if blog title is missing
 if (empty($title)) {
     //blog title is missing
-    header("Location: http://localhost/Projekt_Blogg/create_blog.php?noBlogTitle=true");
+    header("Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/create_blog.php?noBlogTitle=true");
     exit();
 }
 
 //Check if blog got created without a problem
 if (createblog($title, $description, $imageFilePath, $userId)) {
-    header("Location: http://localhost/Projekt_Blogg/admin.php");
+    header("Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/admin.php");
     exit();
 } else {
     //Similar blog already exists and couldnt be created
-    header("Location: http://localhost/Projekt_Blogg/create_blog.php?error=blogAlreadyExists=true");
+    header("Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/create_blog.php?error=blogAlreadyExists=true");
     exit();
 }

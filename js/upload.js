@@ -4,7 +4,7 @@ const uploadMessage = document.getElementById('message--upload'); //where upload
 
 uploadButton.addEventListener('click', function () {
     //Send image to server
-    fetch('/Projekt_Blogg/services/upload_service.php', {
+    fetch('http://www.student.ltu.se/~frelab-8/Projekt_Blogg/services/upload_service.php', {
         method: 'POST',
         body: new FormData(form)
     }).then(

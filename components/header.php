@@ -2,7 +2,7 @@
 <header>
     <div class="header-top">
         <!-- Link to the homepage -->
-        <a href="/Projekt_Blogg/index.php" class="link-logotype"><span class="material-icons">home</span></a>
+        <a href="index.php" class="link-logotype"><span class="material-icons">home</span></a>
         <!-- Header section that should have different content on most pages -->
         <?php
         echo '<h1 class="text-title" id="text-title">' . $headerTitle . '</h1>';
