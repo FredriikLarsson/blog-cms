@@ -27,13 +27,13 @@ function getUser($username)
 //Get the 10 latest post uploaded to the cms system
 function getLatestPosts()
 {
-    return 'SELECT posts.id, posts.title, images.filename FROM posts LEFT JOIN images ON posts.id=images.post_id AND images.type="title" ORDER BY posts.created DESC LIMIT 10';
+    return 'SELECT * FROM posts ORDER BY posts.created DESC LIMIT 10';
 }
 
 //Get posts from a specific blog
 function getBlogPosts($blogId)
 {
-    return 'SELECT posts.id, posts.title, images.filename FROM posts LEFT JOIN images ON posts.id=images.post_id AND images.type="title" WHERE blog_id=' . $blogId;
+    return 'SELECT * FROM posts WHERE blog_id=' . $blogId;
 }
 
 //Get information about a specific post
@@ -41,6 +41,24 @@ function getPost($postId)
 {
     return 'SELECT posts.title, posts.created, posts.content, users.username, images.filename FROM posts 
     INNER JOIN blogs ON posts.blog_id=blogs.id INNER JOIN users ON blogs.user_id=users.id INNER JOIN images ON blogs.user_id=users.id WHERE posts.id=' . $postId;
+}
+
+//add a new post to the database
+function addPost($title, $content, $image, $created, $blogId)
+{
+    return 'INSERT INTO posts (title, content, image, created, blog_id) 
+    VALUES (\'' . $title . '\', \'' . $content . '\', \'' . $image . '\', \'' . $created . '\', \'' . $blogId . '\');';
+}
+
+//delete a post from the database
+function deleteBlogPost($postId)
+{
+    return 'DELETE FROM posts WHERE id=' . $postId;
+}
+
+function alterPost($postId, $title, $content, $image) 
+{
+    return 'UPDATE posts SET title =\'' . $title . '\', content =\'' . $content . '\', image =\'' . $image . '\' WHERE id=' . $postId;
 }
 
 

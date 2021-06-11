@@ -38,8 +38,15 @@ if (!isset($_SESSION['userId'])) {
         </div>
     </header>
     <main class="main">
+        <div class="main__button">
+            <a href="./create_post.php">Skapa ny post</a>
+        </div>
         <ul>
-            <!-- Here should all blog post be generated -->
+            <?php 
+                require_once('services/post_service.php');
+                $blogId = getUserBlog($_SESSION['userId'])['id'];
+                viewAllPosts($blogId);
+            ?>
         </ul>
     </main>
 </body>

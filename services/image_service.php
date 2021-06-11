@@ -63,6 +63,7 @@ function deleteImage($imageId)
     }
 }
 
+/* Change alt-text on a specific image */
 function changeImage($imageId, $altText) {
     global $db;
     $query = alterImageText($imageId, $altText);
