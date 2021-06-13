@@ -11,20 +11,20 @@ $blogId = getUserBlog($_SESSION['userId'])['id']; //id of the blog
 //Check if user is logged in
 if (!isset($_SESSION['userId'])) {
     //No user is logged in (no session is active)
-    header('Location: http://localhost/login.php?noSessionActive=true');
+    header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/login.php?noSessionActive=true');
     exit();
 }
 
 //Check if session user exists in the database (if the session is valid)
 if (!checkSession($_SESSION['userId'])) {
     //The session is not valid
-    header('Location: http://localhost/login.php?sessionNotValid=true');
+    header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/login.php?sessionNotValid=true');
     exit();
 }
 
 //Check if user doesnt have a blog
 if (getUserBlog($_SESSION['userId']) === false) {
-    header('Location: http://localhost/Projekt_Blogg/create_blog.php');
+    header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/create_blog.php');
     exit();
 }
 
@@ -35,11 +35,11 @@ if (isset($_POST['edit-image'])) {
     //Check if the blog has the image linked to it in the database
     if (checkBlogImage($imageId_, $blogId)) {
         changeImage($imageId_, $altText);
-        header('Location: http://localhost/Projekt_Blogg/images.php');
+        header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/images.php');
         exit();
     } else {
         //User blog doesnt have an image with that id in the database
-        header('Location: http://localhost/Projekt_Blogg/index.php?invalidImageRequest=true');
+        header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/index.php?invalidImageRequest=true');
         exit();
     }
 } else {
@@ -52,7 +52,7 @@ if (isset($_POST['edit-image'])) {
         print_r(json_encode($message));
     } else {
         //User blog doesnt have an image with that id in the database
-        header('Location: http://localhost/Projekt_Blogg/index.php?invalidImageRequest=true');
+        header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/index.php?invalidImageRequest=true');
         exit();
     }
 }

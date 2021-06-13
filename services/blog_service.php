@@ -87,7 +87,7 @@ function createblog($title, $presentation, $image, $userId) {
 /* Add a new image to a specific blog
 @param $blogId = id of blog, $imagePath = path of the uploaded image on the server, $description = description of the image 
 @return true if image got added else return false*/
-function addNewImage($blogId, $imagePath, $description) {
+function addNewImage($blogId, $imagePath, $description, $imageName) {
     global $db;
     $query = getAllBlogs(); //Query for getting all blogs from the database
     $existingBlogs = db_select($db, $query); //Array of all the blogs in the database
@@ -100,7 +100,7 @@ function addNewImage($blogId, $imagePath, $description) {
             if (is_null($description)) {
                 $_description = '';
             }
-            $query = insertNewImage($imagePath, $_description, date("Y/m/d"), $blogId); //Query for adding a new image to a blog
+            $query = insertNewImage($imagePath, $imageName, $_description, date("Y/m/d"), $blogId); //Query for adding a new image to a blog
             db_query($db, $query); //Add the image to the database
             return true;
         }

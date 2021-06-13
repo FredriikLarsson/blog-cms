@@ -16,7 +16,7 @@ viewFormButton.addEventListener('click', openForm);
 Array.from(deleteButton).forEach(element => {
     element.addEventListener('click', function () {
         let imageId = element.value; //id of the image
-        fetch('/Projekt_Blogg/controllers/image_controller.inc.php', {
+        fetch('http://www.student.ltu.se/~frelab-8/Projekt_Blogg/controllers/image_controller.inc.php', {
             method: 'POST',
             body: JSON.stringify(imageId)
         }).then(
@@ -39,7 +39,7 @@ Array.from(editButton).forEach(element => {
 
 uploadButton.addEventListener('click', function () {
     //Send image to server
-    fetch('/Projekt_Blogg/services/upload_service.php', {
+    fetch('http://www.student.ltu.se/~frelab-8/Projekt_Blogg/services/upload_service.php', {
         method: 'POST',
         body: new FormData(form)
     }).then(

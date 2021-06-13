@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1:3307
--- Tid vid skapande: 11 jun 2021 kl 12:56
+-- Tid vid skapande: 12 jun 2021 kl 18:33
 -- Serverversion: 10.4.17-MariaDB
 -- PHP-version: 8.0.0
 

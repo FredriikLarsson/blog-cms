@@ -35,8 +35,8 @@ if (getUserBlog($_SESSION['userId']) == false) {
         }
     } else {
         /* In case no file has been chosen to upload */
-        $message = 'Välj en fil att ladda upp.';
-        echo $message;
+        $message = 'Valj en fil att ladda upp.';
+        echo json_encode($message);
     }
 } else {
     /* If user does have a blog */
@@ -49,7 +49,7 @@ if (getUserBlog($_SESSION['userId']) == false) {
         $blogId = getUserBlog($_SESSION['userId'])['id']; //Get blogId to which blog the image is going to be uploaded to
         //check if image upload went through
         if (move_uploaded_file($tmp_file, $upload_dir . $target_file)) {
-            $upload_dir_absolute = "/Projekt_Blogg/uploads/"; //Directory on server that image is going to be stored in
+            $upload_dir_absolute = "/~frelab-8/Projekt_Blogg/uploads/"; //Directory on server that image is going to be stored in
             $imageFilePath = $upload_dir_absolute . $target_file;
             //Check if user sent in a description to the image
             if (!isset($_POST['alt_text'])) {
@@ -57,7 +57,7 @@ if (getUserBlog($_SESSION['userId']) == false) {
             } else {
                 $description = $_POST['alt_text'];
             }
-            addNewImage($blogId, $imageFilePath, $description);
+            addNewImage($blogId, $imageFilePath, $description, $target_file);
             $message = "Filen har laddats upp.";
             echo json_encode($message);
         } else {

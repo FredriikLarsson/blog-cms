@@ -50,14 +50,15 @@ function deleteImage($imageId)
 {
     global $db;
     $query = deleteBlogImage($imageId); //sql query to delete one image from a blog
-    $query_filepath = selectImage($imageId); //sql query for getting one image
-    $filename = db_select($db, $query_filepath)[0]['filename']; //get the image filename
+    $query_filename = selectImage($imageId); //sql query for getting one image
+    $filename = db_select($db, $query_filename)[0]['name']; //get the image filename
     //check if file exists in the server filesystem
-    if (file_exists($_SERVER['DOCUMENT_ROOT'] . $filename)) {
-        unlink($_SERVER['DOCUMENT_ROOT'] . $filename); //delete image from the server filesystem
+    if (file_exists(__DIR__ . '/../uploads/' . $filename)) {
+        unlink(__DIR__ . '/../uploads/' . $filename); //delete image from the server filesystem
         db_query($db, $query); //delete an image from the database
         return true;
     } else {
+        console_log(file_exists(__DIR__ . '/../uploads/example.jpg'));
         //The image does not exist on the server filesystem
         return false;
     }
