@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
 Array.from(deleteButton).forEach(element => {
     element.addEventListener('click', function () {
         let postId = element.value; //id of the post
-        fetch('/Projekt_Blogg/controllers/post_controller.inc.php', {
+        fetch('http://www.student.ltu.se/~frelab-8/Projekt_Blogg/controllers/post_controller.inc.php', {
             method: 'POST',
             body: JSON.stringify(postId)
         }).then(

@@ -17,7 +17,7 @@ function viewBlogPosts($blogId)
         echo '<li class="listitem-news">
                 <a href=\'post.php?postId="' . $value['id'] . '"\' class="postLink">
                     <div class="container-image">
-                        <img src="' . $value['filename'] . '" alt"" class="listitem-image">
+                        <img src="' . $value['image'] . '" alt"" class="listitem-image">
                     </div>
                     <div class="container-listitem-text">
                         <h2 class="listitem-heading">' . $value['title'] . '</h2>

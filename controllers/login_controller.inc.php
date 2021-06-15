@@ -23,6 +23,12 @@ if (isset($_POST['button-login'])) {
     }
 } elseif (isset($_POST['button-register'])) {
     //User wants to register a new user  
+    //check if password including at least 6 characters
+    if (strlen($_POST['password']) < 6) {
+        //Send user back to login page
+        header("Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/login.php?unValidPassword=true");
+        exit();
+    }
     //Check if user could be created without problem
     if (createUser($_POST['username'], $_POST['password'])) {
         //Login user

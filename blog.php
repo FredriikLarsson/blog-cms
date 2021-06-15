@@ -31,7 +31,7 @@ require_once('services/blog_service.php');
         ?>
         <ul class="list-news">
             <?php
-            //viewBlogPosts($_GET['blogId']);
+            viewBlogPosts($_GET['blogId']);
             ?>
         </ul>
     </div>
