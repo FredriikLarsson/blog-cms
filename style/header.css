@@ -7,22 +7,26 @@ body {
     align-items: center;
 }
 
-.header-top {
+.header__top {
     display: flex;
     justify-content: space-between;
-    padding: 2rem 1.6rem 2rem 1.6rem;
+    padding: 2rem 0;
 }
 
-.link-logotype {
+.header__logotype {
     color: black;
 }
 
-.button-menu {
+.header__title {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar__button--open {
     border: none;
     background: none;
     cursor: pointer;
 }
 
-.button-menu:hover {
+.sidebar__button--open:hover {
     color: blue;
 }

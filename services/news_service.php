@@ -13,15 +13,14 @@ function viewLatestBlogs()
     $latestBlogs = db_select($db, $query); //array with the 10 blogs
     /* Create a li element for every blog in the array of the 10 blogs */
     foreach ($latestBlogs as $value) {
-        echo '<li class="listitem-news">
-                <a href=\'blog.php?blogId="' . $value['id'] . '"\' class="blogLink">
-                    <div class="container-image">
-                        <img src="' . $value['image'] . '" alt"" class="listitem-image">
+        echo '<li class="list__item--news">
+                <a href=\'blog.php?blogId="' . $value['id'] . '"\' class="list__item--link">
+                    <div class="image__container">
+                        <img src="' . $value['image'] . '" alt"" class="list__item--image">
                     </div>
-                    <div class="container-listitem-text">
-                        <h2 class="listitem-heading">' . $value['title'] . '</h2>
-                        <p class="listitem-para">' . $value['presentation'] . '
-                        </p>
+                    <div class="list__item--text">
+                        <h2>' . $value['title'] . '</h2>
+                        <p>' . $value['presentation'] . '</p>
                     </div>
                 </a>
             </li>';
@@ -36,13 +35,13 @@ function viewLatestPosts()
     $latestPosts = db_select($db, $query); //array with the 10 posts
     /* Create a li element for every post in the array of the 10 posts */
     foreach ($latestPosts as $value) {
-        echo '<li class="listitem-news">
-                <a href=\'post.php?postId="' . $value['id'] . '"\' class="postLink">
-                    <div class="container-image">
-                        <img src="' . $value['image'] . '" alt"" class="listitem-image">
+        echo '<li class="list__item--news">
+                <a href=\'post.php?postId="' . $value['id'] . '"\' class="list__item--link">
+                    <div class="image__container">
+                        <img src="' . $value['image'] . '" alt"" class="list__item--image">
                     </div>
-                    <div class="container-listitem-text">
-                        <h2 class="listitem-heading">' . $value['title'] . '</h2>
+                    <div class="list__item--text">
+                        <h2>' . $value['title'] . '</h2>
                     </div>
                 </a>
             </li>';

@@ -1,10 +1,8 @@
-.nav-menu {
-    display: flex;
-    justify-content: center;
-}
-
-.nav-menu button {
+.header__nav-button {
     width: 50%;
+    padding: .5em 0;
+    background-color: #e6e6e6;
+    border-width: 1px;
 }
 
 #nav-button-3 {

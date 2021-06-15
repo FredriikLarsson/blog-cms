@@ -16,7 +16,7 @@ session_start();
 </head>
 
 <body>
-    <div class="container-main" id="container-main">
+    <div class="main-container">
         <?php
         /* Here is the page specific content that goes in to the header component */
         $headerTitle = 'Nyheter';
@@ -25,14 +25,14 @@ session_start();
         $navButton3 = '';
         require_once('components/header.php');
         ?>
-        <ul class="list-news" id="list__bloggers">
+        <ul class="list--news" id="list__bloggers">
             <?php
             require_once('services/news_service.php');
             /* Generates the 10 most newly created blogs */
             viewLatestBlogs();
             ?>
         </ul>
-        <ul class="list-news" id="list__posts">
+        <ul class="list--news" id="list__posts">
             <?php
             require_once('services/news_service.php');
             /* Generates the 10 latest posts */

@@ -1,4 +1,4 @@
-.menu-sidebar {
+.header__sidebar {
     height: 100%;
     outline: auto;
     width: 0;
@@ -12,7 +12,7 @@
     transition: 0.3s;
 }
 
-.menu-sidebar a {
+.header__sidebar a {
     padding: 1rem;
     text-decoration: none;
     font-size: 1.8rem;
@@ -21,11 +21,11 @@
     color: white;
 }
 
-.menu-sidebar a:hover {
+.header__sidebar a:hover {
     color: blue;
 }
 
-.menu-sidebar .button-menu-close {
+.sidebar__button--close {
     position: absolute;
     top: 0;
     right: 0;
