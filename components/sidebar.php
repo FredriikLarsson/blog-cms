@@ -1,7 +1,7 @@
 <!-- Sidebar menu that is hidden by default -->
-<div class="menu-sidebar" id="menu-sidebar">
+<div class="header__sidebar" id="menu-sidebar">
     <!-- button for closing the sidebar -->
-    <button class="button-menu-close" id="button-menu-close"><span class="material-icons">close</span></button>
+    <button class="sidebar__button--close" id="sidebar__button--close"><span class="material-icons">close</span></button>
     <?php
     /* Checks if user is logged in */
     if (isset($_SESSION['userId'])) {
