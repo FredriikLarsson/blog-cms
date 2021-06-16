@@ -25,7 +25,6 @@ if (!isset($_SESSION['userId'])) {
 
 <body>
     <header class="header">
-        <div class="container-header-child">
             <?php
             /* Here is the page specific content that goes in to the header component */
             $headerTitle = 'min blogg';
@@ -35,13 +34,12 @@ if (!isset($_SESSION['userId'])) {
             /* Header component */
             require_once('components/header.php');
             ?>
-        </div>
     </header>
     <main class="main">
-        <div class="main__button">
-            <a href="./create_post.php">Skapa ny post</a>
+        <div class="button--new-post">
+            <a href="./create_post.php" class="link--new-post">Skapa ny post</a>
         </div>
-        <ul>
+        <ul class="list">
             <?php 
                 require_once('services/post_service.php');
                 $blogId = getUserBlog($_SESSION['userId'])['id'];

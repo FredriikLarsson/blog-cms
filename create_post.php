@@ -14,16 +14,22 @@
     <main class="container-main">
         <form action="controllers/create_post_controller.inc.php" id="form" enctype="multipart/form-data" method="POST">
             <div class="container-input">
-                <label for="input-textfield-post-title">Titel</label>
-                <input type="text" class="input-textfield" name="post-title" id="input-textfield-post-title">
-                <label for="input-textfield-post-content">Innehåll</label>
-                <textarea name="post-content" id="input-textfield-post-content" cols="30" rows="10" class="input-textfield"></textarea>
-                <label for="input-file-image">Ladda upp en bild</label>
-                <input type="file" class="input-textfield" name="image" id="input-file-image">
+                <div class="form__input-container">
+                    <label for="input-textfield-post-title" class="form__label">Titel</label>
+                    <input type="text" class="form__input" name="post-title" id="input-textfield-post-title">
+                </div>
+                <div class="form__input-container">
+                    <label for="input-textfield-post-content">Innehåll</label>
+                    <textarea name="post-content" id="input-textfield-post-content" cols="30" rows="10" class="form__input"></textarea>
+                </div>
+                <div class="form__input-container">
+                    <label for="input-file-image">Ladda upp en bild</label>
+                    <input type="file" name="image" id="input-file-image">
+                </div>
                 <p id="message--upload"></p>
-                <button name="button-upload" type="button" id="button--upload" class="button">Ladda upp</button>
+                <button name="button-upload" type="button" id="button--upload" class="form__button">Ladda upp</button>
                 <div class="container-buttons">
-                    <button name="button-new-post" type="submit" id="button-new-post" class="button">Skapa en ny post</button>
+                    <button name="button-new-post" type="submit" id="button-new-post" class="form__button">Skapa en ny post</button>
                 </div>
             </div>
         </form>

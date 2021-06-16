@@ -14,8 +14,8 @@ function viewBlogPosts($blogId)
     $blogPosts = db_select($db, $query); //array with the blogposts
     /* Create a li element for every post in the array of all the blogposts */
     foreach ($blogPosts as $value) {
-        echo '<li class="listitem-news">
-                <a href=\'post.php?postId="' . $value['id'] . '"\' class="postLink">
+        echo '<li class="list__item--post">
+                <a href=\'post.php?postId="' . $value['id'] . '"\' class="list__item--link">
                     <div class="container-image">
                         <img src="' . $value['filename'] . '" alt"" class="listitem-image">
                     </div>
