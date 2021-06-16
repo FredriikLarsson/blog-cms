@@ -17,9 +17,9 @@ function viewAllImages($blogId)
                     <div class="image-list__item-container">
                         <img src="' . $value['filename'] . '" alt"" class="image-list__item-image">
                     </div>
-                    <button type="button" name="button_delete" class="image-list__item-button--delete" value="' . $value['id'] . '">Ta bort</button>
-                    <button type="button" class="image-list__item-button--edit" value="' . $value['id'] . '">Redigera</button>
-                    <div class="image-list__edit-form" id="edit--' . $value['id'] . '">
+                    <button type="button" name="button_delete" class="list__item--delete" value="' . $value['id'] . '">Ta bort</button>
+                    <button type="button" class="list__item--edit" value="' . $value['id'] . '">Redigera</button>
+                    <div class="form-container-edit" id="edit--' . $value['id'] . '">
                         <form action="controllers/image_controller.inc.php" method="POST">
                             <label for="input-textfield-alt-text">Ändra alt-text</label>
                             <input type="text" class="input-textfield" name="alt-text">

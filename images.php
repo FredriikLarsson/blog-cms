@@ -26,34 +26,31 @@ if (!isset($_SESSION['userId'])) {
 
 <body>
     <header class="header">
-        <div class="container-header-child">
-            <?php
-            /* Here is the page specific content that goes in to the header component */
-            $headerTitle = 'min blogg';
-            $navButton1 = '';
-            $navButton2 = '';
-            $navButton3 = '';
-            /* Header component */
-            require_once('components/header.php');
-            ?>
-        </div>
+        <?php
+        /* Here is the page specific content that goes in to the header component */
+        $headerTitle = 'min blogg';
+        $navButton1 = '';
+        $navButton2 = '';
+        $navButton3 = '';
+        /* Header component */
+        require_once('components/header.php');
+        ?> 
     </header>
     <main class="main">
-        <div class="main__button">
-            <button type="button" id="button_form">Ladda upp bild</button>
+        <div class="button-container--show-form">
+            <button type="button" id="button_form" class="button--show-form">Ladda upp bild</button>
         </div>
-        <div class="form-popup" id="myForm">
-            <form class="form-container" id="form" method="POST" enctype="multipart/form-data">
-                <h1>Ny bild</h1>
-                <label for="input-file-image">Ladda upp en bild</label>
-                <input type="file" class="input-textfield" name="image" id="input-file-image" required>
-                <label for="alt_text"><b>Alternative text</b></label>
-                <input type="text" placeholder="Alt text" name="alt_text" id="alt_text" required>
-                <button type="submit" name="button_submit" class="btn" id="button_upload">Ladda upp</button>
-                <button type="button" class="btn cancel" id="button_cancel">Close</button>
+        <div class="form-container" id="myForm">
+            <form class="form" id="form" method="POST" enctype="multipart/form-data">
+                <label for="input-file-image"><b>Ladda upp en bild</b></label>
+                <input type="file" name="image" id="input-file-image" required>
+                <label for="alt_text"><b>Beskrivande text</b></label>
+                <input type="text" placeholder="Alt text" class="form__input" name="alt_text" id="alt_text" required>
+                <button type="submit" name="button_submit" class="form__button" id="button_upload">Ladda upp</button>
+                <button type="button" class="form__button" id="button_cancel">Close</button>
             </form>
         </div>
-        <ul class="main__list">
+        <ul class="list">
             <?php
             require_once('services/image_service.php');
             $blog = getUserBlog($_SESSION['userId']); //Get the blog from which the list of images is presented from

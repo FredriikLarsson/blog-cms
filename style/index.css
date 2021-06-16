@@ -27,7 +27,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 0 0 0;
+    margin: 4rem 0 0 0;
 }
 
 .list__item--link {
@@ -45,12 +45,10 @@ html {
 .image__container {
     width: 100%;
     height: auto;
-    display: flex;
-    justify-content: center;
 }
 
 .list__item--image {
-    width: 50%;
+    max-width: 100%;
     height: auto;
 }
 

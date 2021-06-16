@@ -1,4 +1,5 @@
 @import url('header.css');
+@import url('button.css');
 
 * {
     margin: 0;
@@ -27,6 +28,8 @@ html {
     width: 100%;
     padding: 1.6rem 1.6rem;
     font-size: 1.6rem;
+    color: #5E6EBA;
+    font-weight: 700;
 }
 
 .link--new-post {
@@ -34,7 +37,7 @@ html {
 }
 
 .link--new-post:hover {
-    color: blue;
+    color: #354079;
 }
 
 .list {
@@ -55,7 +58,7 @@ html {
 }
 
 .list__item--link:hover {
-    color: #46549e;
+    color: #354079;
 }
 
 .list__item--image-container {
@@ -69,40 +72,4 @@ html {
 
 .list__item--text-container {
     padding: 1rem 0 1rem 0;
-}
-
-.list__item--delete {
-    font-size: 1.2rem;
-    padding: .25em .5em;
-    font-weight: 900;
-    color: #f50057;
-    background-color: white;
-    border: 2px solid #f50057;
-    cursor: pointer;
-    width: max-content;
-    transition: 0.25s ease;
-}
-
-.list__item--delete:hover {
-    color: white;
-    background-color: #f50057;
-}
-
-.list__item--edit {
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: .25em .5em;
-    font-weight: 900;
-    color: #fff;
-    background-color: #7681b9;
-    border: 2px solid #7681b9;
-    cursor: pointer;
-    width: max-content;
-    transition: 0.25s ease;
-}
-
-.list__item--edit:hover {
-    color:white;
-    background-color: #46549e;
-    border: 2px solid #46549e;
 }

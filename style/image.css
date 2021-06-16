@@ -1,4 +1,5 @@
 @import url('header.css');
+@import url('button.css');
 
 * {
     margin: 0;
@@ -8,49 +9,49 @@
 
 html {
     font-size: 10px;
-}
-
-body {
-    display: flex;
-    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
-    display: flex;
-    width: 85%;
-}
-
-.container-header-child {
-    flex-grow: 1;
+    width: 100%;
+    padding: 1.6rem 1.6rem;
 }
 
 .main {
     width: 100%;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.main__list {
+.button-container--show-form {
+    width: 100%;
+    padding: 0 1.6rem 0 1.6rem;
+}
+
+.button--show-form {
+    padding: 1rem 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.list {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+}
+
+.image-list__item {
+    max-width: 100%;
+    height: auto;
+    padding: 1.6rem 0 1.6rem 0;
 }
 
 .main {
     position: relative;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-.form-popup {
+.form-container {
     display: none;
     position: absolute;
     top: 0;
@@ -59,13 +60,17 @@ body {
     z-index: 9;
   }
 
-  .form-container {
+  .form {
     max-width: 300px;
     padding: 10px;
     background-color: white;
   }
 
-  .form-container input[type=text], .form-container input[type=password] {
+  .form label {
+    font-size: 1.6rem;
+  }
+
+  .form__input {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -73,13 +78,13 @@ body {
     background: #f1f1f1;
   }
 
-  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  .form__input:focus {
     background-color: #ddd;
     outline: none;
   }
 
-  .form-container .btn {
-    background-color: #04AA6D;
+  .form__button {
+    background-color: #5E6EBA;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -89,14 +94,14 @@ body {
     opacity: 0.8;
   }
 
-  .form-container .cancel {
-    background-color: red;
+  #button_cancel {
+    background-color: #f50057;
   }
 
-  .form-container .btn:hover, .open-button:hover {
+  .form__button:hover {
     opacity: 1;
   }
 
-  .image-list__edit-form {
+  .form-container-edit {
     display: none;
   }
