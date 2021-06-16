@@ -78,17 +78,17 @@ function viewAllPosts($blogId)
     $posts = db_select($db, $query); //array with all the posts
     /* Create a li element for every post in the array */
     foreach ($posts as $value) {
-        echo '<li class="post-list__item">
-                <a href=\'post.php?postId="' . $value['id'] . '"\' class="postLink">
-                    <div class="post-list__item-container">
-                        <img src="' . $value['image'] . '" alt"" class="post-list__item-image">
+        echo '<li class="list__item--post">
+                <a href=\'post.php?postId="' . $value['id'] . '"\' class="list__item--link">
+                    <div class="list__item--image-container">
+                        <img src="' . $value['image'] . '" alt"" class="post-list__item--image">
                     </div>
-                    <div class="container-listitem-text">
-                        <h2 class="listitem-heading">' . $value['title'] . '</h2>
+                    <div class="list__item--text-container">
+                        <h2 class="list__item--heading">' . $value['title'] . '</h2>
                     </div>
                 </a>
-                <button type="button" name="delete-post" class="post-list__item-button--delete" value="' . $value['id'] . '">Ta bort</button>
-                <a href=\'edit_post.php?postId="' . $value['id'] . '"\' class="postLink">Redigera</a>
+                <button type="button" name="delete-post" class="list__item--delete" value="' . $value['id'] . '">Radera</button>
+                <a href=\'edit_post.php?postId="' . $value['id'] . '"\' class="list__item--edit">Redigera</a>
             </li>';
     }
 }
