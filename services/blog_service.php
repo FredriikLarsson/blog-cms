@@ -17,10 +17,10 @@ function viewBlogPosts($blogId)
         echo '<li class="list__item--post">
                 <a href=\'post.php?postId="' . $value['id'] . '"\' class="list__item--link">
                     <div class="container-image">
-                        <img src="' . $value['image'] . '" alt"" class="listitem-image">
+                        <img src="' . $value['image'] . '" alt"" class="list__item--image">
                     </div>
-                    <div class="container-listitem-text">
-                        <h2 class="listitem-heading">' . $value['title'] . '</h2>
+                    <div class="list__item--text-container">
+                        <h2 class="list__item--heading">' . $value['title'] . '</h2>
                     </div>
                 </a>
             </li>';

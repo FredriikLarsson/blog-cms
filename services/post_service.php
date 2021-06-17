@@ -35,7 +35,7 @@ function getPostDate()
 function getPostImage()
 {
     global $post;
-    return $post[0]['filename'];
+    return $post[0]['image'];
 }
 
 /* get the main content of the post */
