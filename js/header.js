@@ -13,7 +13,8 @@ export function closeNav() {
     sideBar.style.width = '0';
 }
 
-//Change the color of an active button
+//Add underline of an active button
 export function activeNavButton(button, color) {
-    button.style.backgroundColor = color;
+    button.style.textDecoration = 'underline';
+    button.style.color  = color;
 }

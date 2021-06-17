@@ -24,7 +24,7 @@ if (!isset($_SESSION['userId'])) {
 </head>
 
 <body>
-    <header class="header">
+    <header>
         <?php
         /* Here is the page specific content that goes in to the header component */
         $headerTitle = 'min blogg';

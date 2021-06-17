@@ -16,7 +16,7 @@ session_start();
 </head>
 
 <body>
-    <div class="main-container">
+    <header>
         <?php
         /* Here is the page specific content that goes in to the header component */
         $headerTitle = 'Nyheter';
@@ -25,6 +25,8 @@ session_start();
         $navButton3 = '';
         require_once('components/header.php');
         ?>
+    </header>
+    <div class="main-container">
         <ul class="list--news" id="list__bloggers">
             <?php
             require_once('services/news_service.php');

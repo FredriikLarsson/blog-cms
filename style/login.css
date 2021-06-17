@@ -1,11 +1,4 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
-html {
-    font-size: 10px;
-}
+@import url('base.css');
 
 body {
     min-height: 100vh;

@@ -25,15 +25,15 @@ if (!isset($_SESSION['userId'])) {
 </head>
 
 <body>
-    <header class="header">
+    <header>
         <?php
-        /* Here is the page specific content that goes in to the header component */
-        $headerTitle = 'min blogg';
-        $navButton1 = '';
-        $navButton2 = '';
-        $navButton3 = '';
-        /* Header component */
-        require_once('components/header.php');
+            /* Here is the page specific content that goes in to the header component */
+            $headerTitle = 'min blogg';
+            $navButton1 = '';
+            $navButton2 = '';
+            $navButton3 = '';
+            /* Header component */
+            require_once('components/header.php');
         ?> 
     </header>
     <main class="main">

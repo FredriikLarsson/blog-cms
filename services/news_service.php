@@ -19,9 +19,10 @@ function viewLatestBlogs()
                         <img src="' . $value['image'] . '" alt"" class="list__item--image">
                     </div>
                     <div class="list__item--text">
-                        <h2>' . $value['title'] . '</h2>
-                        <p>' . $value['presentation'] . '
-                        </p>
+                        <div class="list__item--text-container">
+                            <h2>' . $value['title'] . '</h2>
+                            <p>' . $value['presentation'] . '</p>
+                        </div>
                     </div>
                 </a>
             </li>';
