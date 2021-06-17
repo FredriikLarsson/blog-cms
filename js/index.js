@@ -11,22 +11,23 @@ buttonMenuClose.addEventListener('click', closeNav);
 window.addEventListener('load', function () {
     //list of the 10 latest blog post should as default be hidden
     listPosts.style.display = 'none';
-    
+    activeNavButton(navButtonBloggers, '#46549e');
 })
 
 //Show the 10 latest bloggers on the platform
 navButtonBloggers.addEventListener('click', function () {
-    this.style.opacity = '1';
-    navButtonPosts.style.opacity = '0.85';
-   
+    activeNavButton(navButtonBloggers, '#46549e');
+    navButtonPosts.style.color = 'black';
+    navButtonPosts.style.textDecoration = 'none';
     listPosts.style.display = 'none';
     listBloggers.style.display = 'flex';
 })
 
 //Show the 10 latest posts on the platform
 navButtonPosts.addEventListener('click', function () {
-    this.style.opacity = '1';
-    navButtonBloggers.style.opacity = '0.85';
+    activeNavButton(navButtonPosts, '#46549e');
+    navButtonBloggers.style.color = 'black';
+    navButtonBloggers.style.textDecoration = 'none';
     listPosts.style.display = 'flex';
     listBloggers.style.display = 'none';
 })

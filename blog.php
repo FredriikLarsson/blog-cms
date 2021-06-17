@@ -19,17 +19,17 @@ require_once('services/blog_service.php');
 </head>
 
 <body>
-    <div class="header">
+    <header>
         <?php
-        /* Here is the page specific content that goes in to the header component */
-        $headerTitle = 'test';
-        /* Here is the filtering alternatives of the blogs posts */
-        $navButton1 = 'Visa alla';
-        $navButton2 = 'Design';
-        $navButton3 = 'Systemutveckling';
-        require_once('components/header.php');
+            /* Here is the page specific content that goes in to the header component */
+            $headerTitle = 'test';
+            /* Here is the filtering alternatives of the blogs posts */
+            $navButton1 = 'Visa alla';
+            $navButton2 = 'Design';
+            $navButton3 = 'Systemutveckling';
+            require_once('components/header.php');
         ?>
-    </div>
+    </header>
     <div class="main">
         <ul class="list">
             <?php

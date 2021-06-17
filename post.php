@@ -19,11 +19,13 @@ require_once('services/post_service.php');
 </head>
 
 <body>
-    <?php
-        /* Here is the page specific content that goes in to the header component */
-        $headerTitle = getPostTitle();
-        require_once('components/header.php');
-    ?>
+    <header>
+        <?php
+            /* Here is the page specific content that goes in to the header component */
+            $headerTitle = getPostTitle();
+            require_once('components/header.php');
+        ?>
+    </header>
     <div class="main">
         <div class="post__image-container">
             <!-- Information about the post -->
