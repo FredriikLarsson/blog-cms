@@ -19,28 +19,26 @@ require_once('services/post_service.php');
 </head>
 
 <body>
-    <div class="container-main">
-        <?php
+    <?php
         /* Here is the page specific content that goes in to the header component */
         $headerTitle = getPostTitle();
         require_once('components/header.php');
-        ?>
-        <div class="container-image">
+    ?>
+    <div class="main">
+        <div class="post__image-container">
             <!-- Information about the post -->
-            <p class="text-post">
+            <p class="post__text">
                 <!-- Author of the post -->
                 Författare: <?php echo getPostAuthor(); ?> <br>
                 <!-- Info when the post was created -->
                 <?php echo getPostDate(); ?>
             </p>
             <!-- Image for the post -->
-            <img src="<?php echo getPostImage(); ?>" alt="" class="image-post">
+            <img src="<?php echo getPostImage(); ?>" alt="" class="post__image">
         </div>
-        <div class="container-content">
-            <div class="container-content-text">
-                <!-- The content of the post -->
-                <p class="content-text"><?php echo getPostContent(); ?></p>
-            </div>
+        <div class="post__content-container">
+            <!-- The content of the post -->
+            <p class="post__content"><?php echo getPostContent(); ?></p>
         </div>
     </div>
 </body>

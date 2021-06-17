@@ -19,7 +19,7 @@ require_once('services/blog_service.php');
 </head>
 
 <body>
-    <div class="container-main" id="container-main">
+    <div class="header">
         <?php
         /* Here is the page specific content that goes in to the header component */
         $headerTitle = 'test';
@@ -29,9 +29,11 @@ require_once('services/blog_service.php');
         $navButton3 = 'Systemutveckling';
         require_once('components/header.php');
         ?>
-        <ul class="list-news">
+    </div>
+    <div class="main">
+        <ul class="list">
             <?php
-            //viewBlogPosts($_GET['blogId']);
+                viewBlogPosts($_GET['blogId']);
             ?>
         </ul>
     </div>

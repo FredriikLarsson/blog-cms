@@ -39,8 +39,8 @@ function getBlogPosts($blogId)
 //Get information about a specific post
 function getPost($postId)
 {
-    return 'SELECT posts.title, posts.created, posts.content, users.username, images.filename FROM posts 
-    INNER JOIN blogs ON posts.blog_id=blogs.id INNER JOIN users ON blogs.user_id=users.id INNER JOIN images ON blogs.user_id=users.id WHERE posts.id=' . $postId;
+    return 'SELECT posts.title, posts.created, posts.content, users.username, posts.image FROM posts 
+    INNER JOIN blogs ON posts.blog_id=blogs.id INNER JOIN users ON blogs.user_id=users.id WHERE posts.id=' . $postId;
 }
 
 //add a new post to the database

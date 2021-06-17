@@ -22,7 +22,7 @@
 }
 
 .header__sidebar a:hover {
-    color: blue;
+    color: #46549e;
 }
 
 .sidebar__button--close {
@@ -34,6 +34,10 @@
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.sidebar__button--close:hover {
+    color: #46549e;
 }
 
 #menu-link-3 {

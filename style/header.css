@@ -17,6 +17,10 @@ body {
     color: black;
 }
 
+.header__logotype:hover {
+    color: #46549e;
+}
+
 .header__title {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -28,5 +32,5 @@ body {
 }
 
 .sidebar__button--open:hover {
-    color: blue;
+    color: #46549e;
 }

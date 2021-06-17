@@ -3,51 +3,53 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 html {
     font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    padding: 0 0 2rem 0;
+.header {
+    width: 100%;
+    padding: 1.6rem 1.6rem;
 }
 
-.container-main {
-    width: 85vw;
-}
-
-.list-news {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.listitem-news {
-    width: 50%;
-    height: auto;
+.main {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem 0 0 0;
+    padding: 1.6rem 1.6rem;
 }
 
-.listitem-image {
-    width: 95%;
+.list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+}
+
+.list__item--post {
+    padding: 1.6rem 0;
+}
+
+.list__item--link {
+    text-decoration: none;
+    color: black;
+}
+
+.list__item--link:hover {
+    color: #46549e;
+}
+
+.list__item--image {
+    max-width: 100%;
     height: auto;
 }
 
-.container-listitem-text {
-    width: 100%;
-}
-
-.container-listitem-text p {
-    padding: 1rem 0 0 1rem;
-    width: 80%;
-}
-
-.container-listitem-text h2 {
-    padding: 1rem 0 0 1rem;
+.list__item--text-container {
+    padding: 1rem 0 1rem 0;
 }
