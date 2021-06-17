@@ -43,7 +43,9 @@ function viewLatestPosts()
                         <img src="' . $value['image'] . '" alt"" class="list__item--image">
                     </div>
                     <div class="list__item--text">
-                        <h2>' . $value['title'] . '</h2>
+                        <div class="list__item--text-container">
+                            <h2>' . $value['title'] . '</h2>
+                        </div>
                     </div>
                 </a>
             </li>';
