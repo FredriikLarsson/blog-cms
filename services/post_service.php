@@ -6,8 +6,8 @@ require_once(__DIR__ .  '/../model/sql_query.php');
 $db = db_connect();
 
 if (isset($_GET['postId'])) {
-    $query = getPost($_GET['postId']); //Information about a specific post
-$post = db_select($db, $query); //Array with information about post (only one row at arrayindex "0")
+    $query = getPost(db_escape($db, $_GET['postId'])); //Information about a specific post
+    $post = db_select($db, $query); //Array with information about post (only one row at arrayindex "0")
 }
 
 /* get title of the post */
@@ -65,7 +65,7 @@ function createPost($title, $content, $image, $userId)
     if (is_null($content)) {
         $_content = '';
     }
-    $queryAddPost = addPost($title, $_content, $_image, date("Y/m/d"), $blogId[0]['id']); //Query for adding a new post to the database
+    $queryAddPost = addPost(db_escape($db, $title), db_escape($db, $_content), db_escape($db, $_image), date("Y/m/d"), db_escape($db, $blogId[0]['id'])); //Query for adding a new post to the database
     db_query($db, $queryAddPost); //Add the post to the database
     return true;
 }
