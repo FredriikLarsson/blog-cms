@@ -1,53 +1,103 @@
 @import url('base.css');
 @import url('header.css');
-
-body {
-    display: flex;
-    justify-content: center;
-}
+@import url('button.css');
 
 .main {
     width: 100%;
-    padding: 20px;
+    padding: 0 1.6rem;
 }
 
-.main__list {
+.button-container--show-form {
+    width: 100%;
+    padding: 1.6rem 1.6rem;
+}
+
+.button--show-form {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: .25em .5em;
+    font-weight: 900;
+    color: #fff;
+    background-color: #5E6EBA;
+    border: 2px solid #5E6EBA;
+    cursor: pointer;
+    width: max-content;
+    transition: 0.25s ease;
+}
+
+.list {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    gap: 4%;
+    display: flex;
 }
 
-.main {
+.list__item {
+    width: 48%;
+    height: auto;
+    margin-bottom: 4%;
+}
+
+.list__item-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 50vh;
+}
+
+.image-list__item-container {
+    max-height: 80%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    flex: 0 1 auto;
+}
+
+.list__item--image {
+    max-width: 100%;
+    height: auto;
+}
+
+.list__item--button-wrapper {
     position: relative;
+    width: 100%;
+    height: auto;
+    flex: 1 1 auto;
+    
+}
+
+.list__item--button-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  
 }
 
 
-
-
-
-
-
-
-
-
-
-
-.form-popup {
+.form-container {
     display: none;
     position: absolute;
     top: 0;
     left: 0;
     border: 3px solid #f1f1f1;
     z-index: 9;
-  }
+}
 
-  .form-container {
+
+
+  .form {
     max-width: 300px;
     padding: 10px;
     background-color: white;
   }
 
-  .form-container input[type=text], .form-container input[type=password] {
+  .form label {
+    font-size: 1.6rem;
+  }
+
+  .form__input {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -55,13 +105,13 @@ body {
     background: #f1f1f1;
   }
 
-  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  .form__input:focus {
     background-color: #ddd;
     outline: none;
   }
 
-  .form-container .btn {
-    background-color: #04AA6D;
+  .form__button {
+    background-color: #5E6EBA;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -71,14 +121,14 @@ body {
     opacity: 0.8;
   }
 
-  .form-container .cancel {
-    background-color: red;
+  #button_cancel {
+    background-color: #f50057;
   }
 
-  .form-container .btn:hover, .open-button:hover {
+  .form__button:hover {
     opacity: 1;
   }
 
-  .image-list__edit-form {
+  .form-container-edit {
     display: none;
   }

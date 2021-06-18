@@ -13,19 +13,25 @@ function viewAllImages($blogId)
     $images = db_select($db, $query); //array with all the images
     /* Create a li element for every image in the array */
     foreach ($images as $value) {
-        echo '<li class="image-list__item">
+        echo '<li class="list__item">
+                <div class="list__item-container">
                     <div class="image-list__item-container">
-                        <img src="' . $value['filename'] . '" alt"" class="image-list__item-image">
+                        <img src="' . $value['filename'] . '" alt"" class="list__item--image">
                     </div>
-                    <button type="button" name="button_delete" class="image-list__item-button--delete" value="' . $value['id'] . '">Ta bort</button>
-                    <button type="button" class="image-list__item-button--edit" value="' . $value['id'] . '">Redigera</button>
-                    <div class="image-list__edit-form" id="edit--' . $value['id'] . '">
-                        <form action="controllers/image_controller.inc.php" method="POST">
-                            <label for="input-textfield-alt-text">Ändra alt-text</label>
-                            <input type="text" class="input-textfield" name="alt-text">
-                            <button type="submit" class="button_ok" name="edit-image" value="' . $value['id'] . '">OK</button>
-                        </form>
+                    <div class="list__item--button-wrapper">
+                        <div class="list__item--button-container">
+                            <button type="button" name="button_delete" class="list__item--delete" value="' . $value['id'] . '">Ta bort</button>
+                            <button type="button" class="list__item--edit" value="' . $value['id'] . '">Redigera</button>
+                            <div class="form-container-edit" id="edit--' . $value['id'] . '">
+                                <form action="controllers/image_controller.inc.php" method="POST">
+                                    <label for="input-textfield-alt-text">Ändra alt-text</label>
+                                    <input type="text" class="input-textfield" name="alt-text">
+                                    <button type="submit" class="button_ok" name="edit-image" value="' . $value['id'] . '">OK</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
+                </div>
                 </li>';
     }
 }

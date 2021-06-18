@@ -1,7 +1,7 @@
 import {buttonMenu, sideBar, buttonMenuClose, navMenu, openNav, closeNav} from '/Projekt_Blogg/js/header.js';
 
-const deleteButton = document.getElementsByClassName('image-list__item-button--delete'); //Image-list items delete buttons
-const editButton = document.getElementsByClassName('image-list__item-button--edit'); //Image-list items edit buttons
+const deleteButton = document.getElementsByClassName('list__item--delete'); //Image-list items delete buttons
+const editButton = document.getElementsByClassName('list__item--edit'); //Image-list items edit buttons
 const hideFormButton = document.getElementById('button_cancel'); //Cancel button for add image popup
 const viewFormButton = document.getElementById('button_form'); //Button to show add image popup
 const uploadButton = document.getElementById('button_upload'); //Button to upload a new image
