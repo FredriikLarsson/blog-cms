@@ -6,7 +6,7 @@ require_once('../services/user_service.php');
 
 $title = $_POST['blog-title'];
 $description = $_POST['blog-description']; //Description text about the blog
-$upload_dir = "/~frelab-8/Projekt_Blogg/uploads/"; //Directory on server that image is going to be stored in
+$upload_dir = "/~frelab-8/Projekt_Blogg/uploads/" . $_SESSION['userId'] . '/'; //Directory on server that image is going to be stored in
 $target_file = basename($_FILES['blog-image']['name']); //Image name on the server when stored correctly
 $imageFilePath = $upload_dir . $target_file;
 $userId = getUserId($_SESSION['userId']); //get user id (session userId = database username)

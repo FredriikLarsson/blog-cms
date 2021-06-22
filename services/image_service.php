@@ -59,8 +59,8 @@ function deleteImage($imageId)
     $query_filename = selectImage(db_escape($db, $imageId)); //sql query for getting one image
     $filename = db_select($db, $query_filename)[0]['name']; //get the image filename
     //check if file exists in the server filesystem
-    if (file_exists(__DIR__ . '/../uploads/' . $filename)) {
-        unlink(__DIR__ . '/../uploads/' . $filename); //delete image from the server filesystem
+    if (file_exists(__DIR__ . '/../uploads/' . $_SESSION['userId'] . '/' . $filename)) {
+        unlink(__DIR__ . '/../uploads/' . $_SESSION['userId'] . '/' . $filename); //delete image from the server filesystem
         db_query($db, $query); //delete an image from the database
         return true;
     } else {

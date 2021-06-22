@@ -18,6 +18,7 @@
                 <input type="text" class="input-textfield" name="username" required>
                 <label for="input-textfield-username">Lösenord</label>
                 <input type="password" class="input-textfield" name="password" minlength="6" required>
+                <p id="error-msg"></p>
                 <div class="container-buttons">
                     <button name="button-login" id="button-login" class="button">Logga in</button>
                     <button name="button-register" id="button-register" class="button">Registrera dig</button>
