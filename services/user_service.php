@@ -11,7 +11,7 @@ $db = db_connect();
 function getUserId($username)
 {
     global $db;
-    $query = getUser($username); //Query for getting information about a user
+    $query = getUser(db_escape($db, $username)); //Query for getting information about a user
     $user = db_select($db, $query); //Array with a single user (1 row)
     //username should only exist once in the database
     if (!count($user) === 1) {

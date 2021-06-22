@@ -22,7 +22,7 @@ function createUser($name, $password)
         }
     }
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT); //hashed password to store in database
-    $queryAddUser = addUser($name, $hashedPassword); //Query for adding a new user to the database
+    $queryAddUser = addUser(db_escape($db, $name), db_escape($db, $hashedPassword)); //Query for adding a new user to the database
     db_query($db, $queryAddUser); //Add the user to the database
     //Create a new session with the newly created user (login user)
     $_SESSION['userId'] = $name;

@@ -55,8 +55,8 @@ function checkBlogImage($imageId, $blogId)
 function deleteImage($imageId)
 {
     global $db;
-    $query = deleteBlogImage($imageId); //sql query to delete one image from a blog
-    $query_filename = selectImage($imageId); //sql query for getting one image
+    $query = deleteBlogImage(db_escape($db, $imageId)); //sql query to delete one image from a blog
+    $query_filename = selectImage(db_escape($db, $imageId)); //sql query for getting one image
     $filename = db_select($db, $query_filename)[0]['name']; //get the image filename
     //check if file exists in the server filesystem
     if (file_exists(__DIR__ . '/../uploads/' . $filename)) {
@@ -73,8 +73,8 @@ function deleteImage($imageId)
 /* Change alt-text on a specific image */
 function changeImage($imageId, $altText) {
     global $db;
-    $query = alterImageText($imageId, $altText);
-    $query_filepath = selectImage($imageId); //sql query for getting one image
+    $query = alterImageText(db_escape($db, $imageId),db_escape($db, $altText));
+    $query_filepath = selectImage(db_escape($db, $imageId)); //sql query for getting one image
     $filename = db_select($db, $query_filepath)[0]['filename']; //get the image filename
     if (file_exists($_SERVER['DOCUMENT_ROOT'] . $filename)) {
         db_query($db, $query);

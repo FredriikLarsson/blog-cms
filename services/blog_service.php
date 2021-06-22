@@ -10,7 +10,7 @@ $param blogId = the id of the specific blog */
 function viewBlogPosts($blogId)
 {
     global $db;
-    $query = getBlogPosts($blogId);  //sql query to get all blog posts from a blog
+    $query = getBlogPosts(db_escape($db, $blogId));  //sql query to get all blog posts from a blog
     $blogPosts = db_select($db, $query); //array with the blogposts
     /* Create a li element for every post in the array of all the blogposts */
     foreach ($blogPosts as $value) {
@@ -33,7 +33,7 @@ $return blog title */
 function getBlogTitle($blogId)
 {
     global $db;
-    $query = getBlog($blogId);  //information about a specific blog
+    $query = getBlog(db_escape($db, $blogId));  //information about a specific blog
     $blog = db_select($db, $query);
     return $blog[0]['title'];
 }
@@ -43,7 +43,7 @@ function getBlogTitle($blogId)
 @return false if user doesnt own a blog, otherwise blog info is returned */
 function getUserBlog($userId) {
     global $db;
-    $query = selectUserBlog($userId); //information about a blog
+    $query = selectUserBlog(db_escape($db, $userId)); //information about a blog
     $blog = db_select($db, $query);
     //check if user doesnt have a blog
     if (count($blog) < 1) {
@@ -79,7 +79,7 @@ function createblog($title, $presentation, $image, $userId) {
     if (is_null($presentation)) {
         $_presentation = '';
     }
-    $queryAddBlog = addBlog($title, $_presentation, $_image, date("Y/m/d"), $userId); //Query for adding a new blog to the database
+    $queryAddBlog = addBlog(db_escape($db, $title), db_escape($db, $_presentation), db_escape($db, $_image), date("Y/m/d"), db_escape($db, $userId)); //Query for adding a new blog to the database
     db_query($db, $queryAddBlog); //Add the blog to the database
     return true;
 }
@@ -100,7 +100,7 @@ function addNewImage($blogId, $imagePath, $description, $imageName) {
             if (is_null($description)) {
                 $_description = '';
             }
-            $query = insertNewImage($imagePath, $imageName, $_description, date("Y/m/d"), $blogId); //Query for adding a new image to a blog
+            $query = insertNewImage(db_escape($db, $imagePath),db_escape($db, $imageName),db_escape($db, $_description), date("Y/m/d"),db_escape($db, $blogId)); //Query for adding a new image to a blog
             db_query($db, $query); //Add the image to the database
             return true;
         }

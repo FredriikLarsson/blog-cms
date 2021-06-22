@@ -51,7 +51,7 @@ function getPostContent()
 function createPost($title, $content, $image, $userId)
 {
     global $db;
-    $query = selectUserBlog($userId); //Query for getting a blog from a specific user
+    $query = selectUserBlog(db_escape($db, $userId)); //Query for getting a blog from a specific user
     $blogId = db_select($db, $query); //The id of the specific blog
     $_image = $image; //In case no image is going to be stored at database
     $_content = $content; //In case no post content is going to be stored at the database
@@ -74,7 +74,7 @@ function createPost($title, $content, $image, $userId)
 function viewAllPosts($blogId)
 {
     global $db;
-    $query = getBlogPosts($blogId); //sql query to get all posts from a blog
+    $query = getBlogPosts(db_escape($db, $blogId)); //sql query to get all posts from a blog
     $posts = db_select($db, $query); //array with all the posts
     /* Create a li element for every post in the array */
     foreach ($posts as $value) {
@@ -97,14 +97,14 @@ function viewAllPosts($blogId)
 function deletePost($postId)
 {
     global $db;
-    $query = deleteBlogPost($postId); //sql query to delete one post from a blog
+    $query = deleteBlogPost(db_escape($db, $postId)); //sql query to delete one post from a blog
     db_query($db, $query); //delete a post from the database
 }
 
 /* Change a specific post */
 function changePost($postId, $title, $content, $image) {
     global $db;
-    $query = alterPost($postId, $title, $content, $image);
+    $query = alterPost(db_escape($db, $postId), db_escape($db, $title), db_escape($db, $content), db_escape($db, $image));
     db_query($db, $query);
     return true;
 }
