@@ -19,10 +19,9 @@ session_start();
     <header>
         <?php
         /* Here is the page specific content that goes in to the header component */
-        $headerTitle = 'Nyheter';
         $navButton1 = 'Senaste inlägg';
         $navButton2 = 'Nya bloggare';
-        $navButton3 = '';
+        $navButton3 = 'Alla bloggar';
         require_once('components/header.php');
         ?>
     </header>
@@ -39,6 +38,13 @@ session_start();
             require_once('services/news_service.php');
             /* Generates the 10 latest posts */
             viewLatestPosts();
+            ?>
+        </ul>
+        <ul class="list--news" id="list__bloggers--all">
+            <?php
+            require_once('services/news_service.php');
+            /* Generates all created blogs on the system */
+            viewAllBlogs();
             ?>
         </ul>
     </div>

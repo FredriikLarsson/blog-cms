@@ -10,7 +10,7 @@ $param blogId = the id of the specific blog */
 function viewBlogPosts($blogId)
 {
     global $db;
-    $query = getBlogPosts(db_escape($db, $blogId));  //sql query to get all blog posts from a blog
+    $query = getBlogPosts($blogId);  //sql query to get all blog posts from a blog
     $blogPosts = db_select($db, $query); //array with the blogposts
     /* Create a li element for every post in the array of all the blogposts */
     foreach ($blogPosts as $value) {

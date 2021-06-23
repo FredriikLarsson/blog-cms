@@ -29,6 +29,30 @@ function viewLatestBlogs()
     }
 }
 
+/* view all created blogs on the cms system */
+function viewAllBlogs()
+{
+    global $db;
+    $query = getAllBlogs(); //sql query to get all created blogs on the cms system
+    $allBlogs = db_select($db, $query); //array with all blogs on the cms system
+    /* Create a li element for every blog in the array of all the blogs */
+    foreach ($allBlogs as $value) {
+        echo '<li class="list__item--news">
+                <a href=\'blog.php?blogId="' . $value['id'] . '"\' class="list__item--link">
+                    <div class="image__container">
+                        <img src="' . $value['image'] . '" alt"" class="list__item--image">
+                    </div>
+                    <div class="list__item--text">
+                        <div class="list__item--text-container">
+                            <h2>' . $value['title'] . '</h2>
+                            <p>' . $value['presentation'] . '</p>
+                        </div>
+                    </div>
+                </a>
+            </li>';
+    }
+}
+
 /* view the 10 most recent created posts on the cms system */
 function viewLatestPosts()
 {

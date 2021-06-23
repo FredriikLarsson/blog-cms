@@ -25,8 +25,7 @@ console_log($columns);
 
 /*
 $db = db_connect();
-$query = 'ALTER TABLE posts
-MODIFY image varchar (100)';
+$query = '';
 $columns = db_query($db, $query);
 console_log($columns);
 */
