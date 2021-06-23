@@ -15,7 +15,7 @@ function viewBlogPosts($blogId)
     /* Create a li element for every post in the array of all the blogposts */
     foreach ($blogPosts as $value) {
         echo '<li class="list__item--post">
-                <a href=\'post.php?postId="' . $value['id'] . '"\' class="list__item--link">
+                <a href=\'post.php?postId="' . $value['id'] . '" class="list__item--link">
                     <div class="container-image">
                         <img src="' . $value['image'] . '" alt"" class="list__item--image">
                     </div>
