@@ -12,21 +12,25 @@
     padding: 1rem 0;
 }
 
+
+/* Image of the post */
 .post__image {
     max-width: 100%;
     height: auto;
 }
 
+/* Info about the post */
 .post__text {
     font-size: 1.2rem;
     margin: 0 0 1rem 0;
 }
 
-.post__content {
-    width: 75%;
-}
-
+/* Content in the post */
 .post__content-container {
     width: 100%;
     font-size: 1.6rem;
+}
+
+.post__content {
+    width: 75%;
 }

@@ -9,24 +9,24 @@ $db = db_connect();
 function viewAllImages($blogId)
 {
     global $db;
-    $query = selectAllBlogImages($blogId); //sql query to get all images from a blog
-    $images = db_select($db, $query); //array with all the images
+    $query = selectAllBlogImages($blogId); //Sql query to get all images from a blog
+    $images = db_select($db, $query); //Array with all the images
     /* Create a li element for every image in the array */
     foreach ($images as $value) {
         echo '<li class="list__item">
                 <div class="list__item-container">
-                    <div class="image-list__item-container">
+                    <div class="list__item--image-container">
                         <img src="' . $value['filename'] . '" alt"" class="list__item--image">
                     </div>
                     <div class="list__item--button-wrapper">
                         <div class="list__item--button-container">
                             <button type="button" name="button_delete" class="list__item--delete" value="' . $value['id'] . '">Ta bort</button>
                             <button type="button" class="list__item--edit" value="' . $value['id'] . '">Redigera</button>
-                            <div class="form-container-edit" id="edit--' . $value['id'] . '">
+                            <div class="list__item--form-container" id="edit--' . $value['id'] . '">
                                 <form action="controllers/image_controller.inc.php" method="POST">
                                     <label for="input-textfield-alt-text">Ändra alt-text</label>
-                                    <input type="text" class="input-textfield" name="alt-text">
-                                    <button type="submit" class="button_ok" name="edit-image" value="' . $value['id'] . '">OK</button>
+                                    <input type="text" class="list_item--input" name="alt-text">
+                                    <button type="submit" class="list__item--button" name="edit-image" value="' . $value['id'] . '">OK</button>
                                 </form>
                             </div>
                         </div>
@@ -71,9 +71,10 @@ function deleteImage($imageId)
 }
 
 /* Change alt-text on a specific image */
-function changeImage($imageId, $altText) {
+function changeImage($imageId, $altText)
+{
     global $db;
-    $query = alterImageText(db_escape($db, $imageId),db_escape($db, $altText));
+    $query = alterImageText(db_escape($db, $imageId), db_escape($db, $altText));
     $query_filepath = selectImage(db_escape($db, $imageId)); //sql query for getting one image
     $filename = db_select($db, $query_filepath)[0]['filename']; //get the image filename
     if (file_exists($_SERVER['DOCUMENT_ROOT'] . $filename)) {

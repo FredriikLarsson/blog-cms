@@ -10,13 +10,13 @@ $param blogId = the id of the specific blog */
 function viewBlogPosts($blogId)
 {
     global $db;
-    $query = getBlogPosts($blogId);  //sql query to get all blog posts from a blog
-    $blogPosts = db_select($db, $query); //array with the blogposts
+    $query = getBlogPosts($blogId);  //Sql query to get all blog posts from a blog
+    $blogPosts = db_select($db, $query); //Array with the blogposts
     /* Create a li element for every post in the array of all the blogposts */
     foreach ($blogPosts as $value) {
         echo '<li class="list__item--post">
                 <a href=\'post.php?postId="' . $value['id'] . '"\' class="list__item--link">
-                    <div class="container-image">
+                    <div class="list__item--image-container">
                         <img src="' . $value['image'] . '" alt"" class="list__item--image">
                     </div>
                     <div class="list__item--text-container">
@@ -41,7 +41,8 @@ function getBlogTitle($blogId)
 /* Get a blog owned by a specific user
 @param userId = id of the user
 @return false if user doesnt own a blog, otherwise blog info is returned */
-function getUserBlog($userId) {
+function getUserBlog($userId)
+{
     global $db;
     $query = selectUserBlog(db_escape($db, $userId)); //information about a blog
     $blog = db_select($db, $query);
@@ -56,7 +57,8 @@ function getUserBlog($userId) {
 /* Create a new blog
 @param $title = blogtitle, $presentation = blogpresentation, $image = filepath to blog image
 @return true in case blog was successfully created, false if something went wrong */
-function createblog($title, $presentation, $image, $userId) {
+function createblog($title, $presentation, $image, $userId)
+{
     global $db;
     $query = getAllBlogs(); //Query for getting all blogs from the database
     $existingBlogs = db_select($db, $query); //Array of all the blogs in the database
@@ -87,7 +89,8 @@ function createblog($title, $presentation, $image, $userId) {
 /* Add a new image to a specific blog
 @param $blogId = id of blog, $imagePath = path of the uploaded image on the server, $description = description of the image 
 @return true if image got added else return false*/
-function addNewImage($blogId, $imagePath, $description, $imageName) {
+function addNewImage($blogId, $imagePath, $description, $imageName)
+{
     global $db;
     $query = getAllBlogs(); //Query for getting all blogs from the database
     $existingBlogs = db_select($db, $query); //Array of all the blogs in the database
@@ -100,33 +103,32 @@ function addNewImage($blogId, $imagePath, $description, $imageName) {
             if (is_null($description)) {
                 $_description = '';
             }
-            $query = insertNewImage(db_escape($db, $imagePath),db_escape($db, $imageName),db_escape($db, $_description), date("Y/m/d"),db_escape($db, $blogId)); //Query for adding a new image to a blog
+            $query = insertNewImage(db_escape($db, $imagePath), db_escape($db, $imageName), db_escape($db, $_description), date("Y/m/d"), db_escape($db, $blogId)); //Query for adding a new image to a blog
             db_query($db, $query); //Add the image to the database
             return true;
         }
     }
     //blog doesnt exists
-    return false;  
+    return false;
 }
 
 
 /* Move image that is sent in through a form, to a specific permanently location on the server */
-function uploadImage() {
+function uploadImage()
+{
     $tmp_file = $_FILES['blog-image']['tmp_name']; //Temp filename on server for sent in image through post request
     $upload_dir = "../uploads/"; //Directory on server that image is going to be stored in
     $target_file = basename($_FILES['blog-image']['name']); //Image name on the server when stored correctly
-        //check if image upload went through
-        if(move_uploaded_file($tmp_file, $upload_dir . $target_file))
-        {
-            $message = "Filen har laddats upp.";
-        }
-    
-        //Something went wrong during the upload
-        else
-        {
-            $error = $_FILES['blog-image']['error'];
-            //$message = $upload_errors[$error];
-        }
+    //check if image upload went through
+    if (move_uploaded_file($tmp_file, $upload_dir . $target_file)) {
+        $message = "Filen har laddats upp.";
+    }
+
+    //Something went wrong during the upload
+    else {
+        $error = $_FILES['blog-image']['error'];
+        //$message = $upload_errors[$error];
+    }
 }
 
 /* Get the image of the blog

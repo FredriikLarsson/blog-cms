@@ -6,14 +6,16 @@
     padding: 1.6rem 1.6rem;
 }
 
-.list--news {
+
+/* List of news in the cms system */
+.list {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 4%;
 }
 
-.list__item--news {
+.list__item {
     width: 48%;
     height: auto;
     margin-bottom: 4%;
@@ -34,7 +36,9 @@
     color: #46549e;
 }
 
-.image__container {
+
+/* Image in every list item on the list */
+.list__item--image-container {
     max-height: 80%;
     width: auto;
     display: flex;
@@ -47,6 +51,8 @@
     height: auto;
 }
 
+
+/* Text in every list item on the list */
 .list__item--text {
     position: relative;
     width: 100%;

@@ -22,28 +22,32 @@ session_start();
         $navButton1 = 'Senaste inlägg';
         $navButton2 = 'Nya bloggare';
         $navButton3 = 'Alla bloggar';
+        /* Header component */
         require_once('components/header.php');
         ?>
     </header>
     <div class="main-container">
-        <ul class="list--news" id="list__bloggers">
+        <!-- List with the 10 most newly created blogs -->
+        <ul class="list" id="list__bloggers">
             <?php
             require_once('services/news_service.php');
             /* Generates the 10 most newly created blogs */
             viewLatestBlogs();
             ?>
         </ul>
-        <ul class="list--news" id="list__posts">
+        <!-- List with the 10 latest posts -->
+        <ul class="list" id="list__posts">
             <?php
             require_once('services/news_service.php');
             /* Generates the 10 latest posts */
             viewLatestPosts();
             ?>
         </ul>
-        <ul class="list--news" id="list__bloggers--all">
+        <!-- List with all blogs in the cms system -->
+        <ul class="list" id="list__bloggers--all">
             <?php
             require_once('services/news_service.php');
-            /* Generates all created blogs on the system */
+            /* Generates all created blogs in the cms system */
             viewAllBlogs();
             ?>
         </ul>

@@ -12,28 +12,22 @@ header {
     padding: 1.6rem 1.6rem;
 }
 
-.header__top {
+.header-container {
     display: flex;
     justify-content: space-between;
     padding: 2rem 0 4rem 0;
 }
 
-.header__logotype {
+/* Logotype to homepage */
+.logotype {
     color: black;
 }
 
-.header__logotype:hover {
-    color: #354079;
-}
-
-.header__logotype:hover {
+.logotype:hover {
     color: #46549e;
 }
 
-.header__title {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
+/* Button to open sidebar */
 .sidebar__button--open {
     border: none;
     background: none;

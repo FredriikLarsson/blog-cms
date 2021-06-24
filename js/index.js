@@ -1,4 +1,4 @@
-import { buttonMenu, sideBar, buttonMenuClose, openNav, closeNav, activeNavButton} from '/~frelab-8/Projekt_Blogg/js/header.js';
+import { buttonMenu, sideBar, buttonMenuClose, openNav, closeNav, activeNavButton } from '/~frelab-8/Projekt_Blogg/js/header.js';
 
 const listPosts = document.getElementById('list__posts'); //List of the 10 latest post
 const listBloggers = document.getElementById('list__bloggers'); //List of the 10 latest bloggers on the platform

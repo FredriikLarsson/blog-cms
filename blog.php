@@ -14,6 +14,7 @@ require_once('services/blog_service.php');
     <script type="module" src="js/blog.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>
+        <!-- Title of the blog -->
         <?php echo getBlogTitle($_GET['blogId']); ?>
     </title>
 </head>
@@ -22,22 +23,23 @@ require_once('services/blog_service.php');
     <header>
         <?php
         /* Here is the page specific content that goes in to the header component */
-        $headerTitle = 'test';
-        /* Here is the filtering alternatives of the blogs posts */
-        $navButton1 = 'Visa alla';
-        $navButton2 = 'Design';
-        $navButton3 = 'Systemutveckling';
+        $navButton1 = '';
+        $navButton2 = '';
+        $navButton3 = '';
+        /* Header component */
         require_once('components/header.php');
         ?>
     </header>
     <div class="main">
+        <!-- List with all the posts for a blog -->
         <ul class="list">
             <?php
-                viewBlogPosts($_GET['blogId']);
+            viewBlogPosts($_GET['blogId']);
             ?>
         </ul>
-        <?php 
-            require_once('components/info.php');
+        <!-- Information about the blog -->
+        <?php
+        require_once('components/info.php');
         ?>
     </div>
 </body>

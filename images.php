@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('services/blog_service.php');
-//Control if client is logged in (has a started session)
+//Check if client is logged in (has a started session)
 if (!isset($_SESSION['userId'])) {
     //If client is not logged in then redirect to login page 
     header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/login.php');
@@ -27,29 +27,35 @@ if (!isset($_SESSION['userId'])) {
 <body>
     <header>
         <?php
-            /* Here is the page specific content that goes in to the header component */
-            $headerTitle = 'min blogg';
-            $navButton1 = '';
-            $navButton2 = '';
-            $navButton3 = '';
-            /* Header component */
-            require_once('components/header.php');
-        ?> 
+        /* Here is the page specific content that goes in to the header component */
+        $navButton1 = '';
+        $navButton2 = '';
+        $navButton3 = '';
+        /* Header component */
+        require_once('components/header.php');
+        ?>
     </header>
-    <main class="main">
-        <div class="button-container--show-form">
-            <button type="button" id="button_form" class="button--show-form">Ladda upp bild</button>
+    <main>
+        <!-- Button to open form for uploading a new image -->
+        <div class="button-container--upload">
+            <button type="button" id="button_form" class="button--upload">Ladda upp bild</button>
         </div>
+        <!-- Form for uploading a new image -->
         <div class="form-container" id="myForm">
             <form class="form" id="form" method="POST" enctype="multipart/form-data">
+                <!-- Input for image file to upload -->
                 <label for="input-file-image"><b>Ladda upp en bild</b></label>
                 <input type="file" name="image" id="input-file-image" required>
+                <!-- Input for alt-text to uploaded image -->
                 <label for="alt_text"><b>Beskrivande text</b></label>
                 <input type="text" placeholder="Alt text" class="form__input" name="alt_text" id="alt_text" required>
+                <!-- Button to upload image -->
                 <button type="submit" name="button_submit" class="form__button" id="button_upload">Ladda upp</button>
+                <!-- Button to cancel the current image upload -->
                 <button type="button" class="form__button" id="button_cancel">Close</button>
             </form>
         </div>
+        <!-- List of images -->
         <ul class="list">
             <?php
             require_once('services/image_service.php');

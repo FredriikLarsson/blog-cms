@@ -55,12 +55,6 @@ function userAuthentication($name, $password)
     return false;
 }
 
-/* 
-Kontrollerar sessionen i webbläsaren mot serverns databas med användare
-$param username är användarnamnet i sessionen
-$return sant eller falskt ifall användarnamnet i sessionen finns i databasen
-*/
-
 /* check if current browser session is valid
 @param username = username in the current session
 @return true if username exists in the database, else return false */

@@ -1,5 +1,6 @@
 @import url('base.css');
 @import url('header.css');
+@import url('info.css');
 
 .main {
     width: 100%;
@@ -8,6 +9,8 @@
     padding: 1.6rem 1.6rem;
 }
 
+
+/* List with all the posts of a blog */
 .list {
     width: 75%;
     display: flex;
@@ -16,10 +19,14 @@
     list-style-type: none;
 }
 
+
+/* Posts on the blog */
 .list__item--post {
     padding: 1.6rem 0;
 }
 
+
+/* Link to the post */
 .list__item--link {
     text-decoration: none;
     color: black;
@@ -29,33 +36,15 @@
     color: #46549e;
 }
 
+
+/* The image of the post */
 .list__item--image {
     max-width: 100%;
     height: auto;
 }
 
+
+/* The heading of the post */
 .list__item--text-container {
     padding: 1rem 0 1rem 0;
-}
-
-.blog-info {
-    padding: 1.6rem 1.6rem;
-    background-color: #E6E6E6;
-    width: 25%;
-}
-
-.blog-image {
-    max-width: 100%;
-}
-
-.blog-title {
-    margin: 1.6rem 0;
-}
-
-.blog-header {
-    margin: 1.6rem 0;
-}
-
-.blog-description {
-    margin: 1.6rem 0;
 }

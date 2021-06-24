@@ -1,3 +1,4 @@
+/* Delete button to list items */
 .list__item--delete {
     font-size: 1.2rem;
     padding: .25em .5em;
@@ -15,6 +16,8 @@
     background-color: #f50057;
 }
 
+
+/* Edit button to list items */
 .list__item--edit {
     text-decoration: none;
     font-size: 1.2rem;

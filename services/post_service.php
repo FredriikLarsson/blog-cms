@@ -70,18 +70,18 @@ function createPost($title, $content, $image, $userId)
     return true;
 }
 
-/* view all posts that the blog has uploaded */
+/* View all posts that the blog has uploaded */
 function viewAllPosts($blogId)
 {
     global $db;
-    $query = getBlogPosts(db_escape($db, $blogId)); //sql query to get all posts from a blog
-    $posts = db_select($db, $query); //array with all the posts
+    $query = getBlogPosts(db_escape($db, $blogId)); //Sql query to get all posts from a blog
+    $posts = db_select($db, $query); //Array with all the posts
     /* Create a li element for every post in the array */
     foreach ($posts as $value) {
         echo '<li class="list__item--post">
                 <a href=\'post.php?postId="' . $value['id'] . '"\' class="list__item--link">
                     <div class="list__item--image-container">
-                        <img src="' . $value['image'] . '" alt"" class="post-list__item--image">
+                        <img src="' . $value['image'] . '" alt"" class="list__item--image">
                     </div>
                     <div class="list__item--text-container">
                         <h2 class="list__item--heading">' . $value['title'] . '</h2>
@@ -102,7 +102,8 @@ function deletePost($postId)
 }
 
 /* Change a specific post */
-function changePost($postId, $title, $content, $image) {
+function changePost($postId, $title, $content, $image)
+{
     global $db;
     $query = alterPost(db_escape($db, $postId), db_escape($db, $title), db_escape($db, $content), db_escape($db, $image));
     db_query($db, $query);

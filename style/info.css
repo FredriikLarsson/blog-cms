@@ -1,0 +1,25 @@
+.card {
+    padding: 1.6rem 1.6rem;
+    background-color: #E6E6E6;
+    width: 25%;
+}
+
+/* Header of the card */
+.card__header {
+    margin: 1.6rem 0;
+}
+
+/* Image of the blog */
+.card__image {
+    max-width: 100%;
+}
+
+/* Title of the blog */
+.card__title {
+    margin: 1.6rem 0;
+}
+
+/* Description of the blog */
+.card__description {
+    margin: 1.6rem 0;
+}

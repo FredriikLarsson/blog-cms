@@ -14,6 +14,7 @@ require_once('services/post_service.php');
     <script type="module" src="js/post.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>
+        <!-- The post title -->
         <?php echo getPostTitle(); ?>
     </title>
 </head>
@@ -21,9 +22,8 @@ require_once('services/post_service.php');
 <body>
     <header>
         <?php
-            /* Here is the page specific content that goes in to the header component */
-            $headerTitle = getPostTitle();
-            require_once('components/header.php');
+        /* Header component */
+        require_once('components/header.php');
         ?>
     </header>
     <div class="main">
@@ -40,8 +40,8 @@ require_once('services/post_service.php');
         </div>
     </div>
     <div class="post__content-container">
-            <!-- The content of the post -->
-            <p class="post__content"><?php echo getPostContent(); ?></p>
+        <!-- The content of the post -->
+        <p class="post__content"><?php echo getPostContent(); ?></p>
     </div>
 </body>
 

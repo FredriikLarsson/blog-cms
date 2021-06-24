@@ -1,4 +1,5 @@
-.header__sidebar {
+/* Sidebar */
+.sidebar {
     height: 100%;
     outline: auto;
     width: 0;
@@ -12,7 +13,9 @@
     transition: 0.3s;
 }
 
-.header__sidebar a {
+
+/* All links inside sidebar */
+.sidebar a {
     padding: 1rem;
     text-decoration: none;
     font-size: 1.8rem;
@@ -21,10 +24,12 @@
     color: white;
 }
 
-.header__sidebar a:hover {
+.sidebar a:hover {
     color: #46549e;
 }
 
+
+/* Button to close sidebar */
 .sidebar__button--close {
     position: absolute;
     top: 0;
@@ -38,8 +43,4 @@
 
 .sidebar__button--close:hover {
     color: #46549e;
-}
-
-#menu-link-3 {
-    display: none;
 }

@@ -1,7 +1,7 @@
 export const buttonMenu = document.getElementById('sidebar__button--open'); //Hamburger button for sidebar
-export const sideBar = document.getElementById('menu-sidebar'); //Sidebar menu
+export const sideBar = document.getElementById('sidebar'); //Sidebar menu
 export const buttonMenuClose = document.getElementById('sidebar__button--close'); //Close button for sidebar
-export const navMenu = document.getElementById('header__nav-menu'); //Main navigation menu
+export const navMenu = document.getElementById('nav-menu'); //Main navigation menu
 
 //View the sidebar menu 
 export function openNav() {
@@ -16,5 +16,5 @@ export function closeNav() {
 //Add underline of an active button
 export function activeNavButton(button, color) {
     button.style.textDecoration = 'underline';
-    button.style.color  = color;
+    button.style.color = color;
 }

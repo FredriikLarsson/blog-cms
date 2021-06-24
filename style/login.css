@@ -4,25 +4,29 @@ body {
     min-height: 100vh;
 }
 
-.container-main {
+main {
     display: flex;
     min-height: 100vh;
     justify-content: center;
     outline: auto;
 }
 
-.container-input-textfields {
+
+/* Form to login or register a new user */
+.form__input-container {
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: center;
 }
 
-.container-buttons {
+
+/* Button in the form */
+.form__button-container {
     display: flex;
     outline: auto;
 }
 
-.button {
+.form__button {
     flex-grow: 1;
 }

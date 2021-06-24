@@ -11,17 +11,22 @@
 </head>
 
 <body>
-    <main class="container-main">
+    <main>
+        <!-- Form to login or register a new user on the cms system -->
         <form action="controllers/login_controller.inc.php" class="form" method="POST">
-            <div class="container-input-textfields">
+            <div class="form__input-container">
+                <!-- Inputfield for username -->
                 <label for="input-textfield-username">Användarnamn</label>
-                <input type="text" class="input-textfield" name="username" required>
+                <input type="text" class="form__input" name="username" required>
+                <!-- Inputfield for password -->
                 <label for="input-textfield-username">Lösenord</label>
-                <input type="password" class="input-textfield" name="password" minlength="6" required>
+                <input type="password" class="form__input" name="password" minlength="6" required>
+                <!-- Msg to user if something went wrong with login or register -->
                 <p id="error-msg"></p>
-                <div class="container-buttons">
-                    <button name="button-login" id="button-login" class="button">Logga in</button>
-                    <button name="button-register" id="button-register" class="button">Registrera dig</button>
+                <!-- Buttons to either login or register a new user -->
+                <div class="form__button-container">
+                    <button name="button-login" id="button-login" class="form__button">Logga in</button>
+                    <button name="button-register" id="button-register" class="form__button">Registrera dig</button>
                 </div>
             </div>
         </form>

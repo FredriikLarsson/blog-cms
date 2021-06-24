@@ -2,17 +2,19 @@
 @import url('header.css');
 @import url('button.css');
 
-.main {
+main {
     width: 100%;
     padding: 0 1.6rem;
 }
 
-.button-container--show-form {
+
+/* Button to open form for uploading a new image */
+.button-container--upload {
     width: 100%;
     padding: 1.6rem 1.6rem;
 }
 
-.button--show-form {
+.button--upload {
     text-decoration: none;
     font-size: 1.2rem;
     padding: .25em .5em;
@@ -25,6 +27,73 @@
     transition: 0.25s ease;
 }
 
+
+/* Form for uploading a new image */
+.form-container {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+
+/* Inputfields in form for uploading a new image */
+.form label {
+  font-size: 1.6rem;
+}
+
+.form__input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form__input:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+/* Buttons inside form */
+.form__button {
+  background-color: #5E6EBA;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form__button:hover {
+  opacity: 1;
+}
+
+
+/* Button to cancel the current image upload */
+#button_cancel {
+  background-color: #f50057;
+}
+
+
+
+.form-container-edit {
+  display: none;
+}
+
+
+/* List of all the images on the current blog */
 .list {
     list-style: none;
     display: flex;
@@ -33,6 +102,8 @@
     display: flex;
 }
 
+
+/* Images in the list */
 .list__item {
     width: 48%;
     height: auto;
@@ -47,7 +118,7 @@
   min-height: 50vh;
 }
 
-.image-list__item-container {
+.list__item--image-container {
   max-height: 80%;
   width: auto;
   display: flex;
@@ -60,6 +131,8 @@
   height: auto;
 }
 
+
+/* Buttons on every image in the image-list */
 .list__item--button-wrapper {
   position: relative;
   width: 100%;
@@ -72,58 +145,3 @@
   bottom: 0;
   left: 0;
 }
-
-.form-container {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-  }
-
-  .form {
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-  }
-
-  .form label {
-    font-size: 1.6rem;
-  }
-
-  .form__input {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-  }
-
-  .form__input:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-
-  .form__button {
-    background-color: #5E6EBA;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
-  }
-
-  #button_cancel {
-    background-color: #f50057;
-  }
-
-  .form__button:hover {
-    opacity: 1;
-  }
-
-  .form-container-edit {
-    display: none;
-  }

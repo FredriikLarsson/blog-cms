@@ -1,8 +1,6 @@
-import {buttonMenu, sideBar, buttonMenuClose, openNav, closeNav, navMenu} from '/~frelab-8/Projekt_Blogg/js/header.js';
+import { buttonMenu, sideBar, buttonMenuClose, openNav, closeNav, navMenu } from '/~frelab-8/Projekt_Blogg/js/header.js';
 
 const deleteButton = document.getElementsByClassName('list__item--delete'); //Post-list items delete buttons
-const editButton = document.getElementsByClassName('post-list__item-button--edit'); //Post-list items edit buttons
-
 
 buttonMenu.addEventListener('click', openNav);
 buttonMenuClose.addEventListener('click', closeNav);

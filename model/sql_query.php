@@ -56,7 +56,7 @@ function deleteBlogPost($postId)
     return 'DELETE FROM posts WHERE id=' . $postId;
 }
 
-function alterPost($postId, $title, $content, $image) 
+function alterPost($postId, $title, $content, $image)
 {
     return 'UPDATE posts SET title =\'' . $title . '\', content =\'' . $content . '\', image =\'' . $image . '\' WHERE id=' . $postId;
 }
@@ -124,7 +124,7 @@ function selectImage($imageId)
     return 'SELECT * FROM images WHERE id=' . $imageId;
 }
 
-function alterImageText($imageId, $altText) 
+function alterImageText($imageId, $altText)
 {
     return 'UPDATE images SET description =\'' . $altText . '\' WHERE id=' . $imageId;
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once('../services/login_service.php');
 require_once('../services/blog_service.php');
@@ -38,7 +38,6 @@ if (isset($_POST['edit-post'])) {
     changePost($postId_, $postTitle, $postContent, $postImage);
     header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/admin.php');
     exit();
-    
 } else {
     deletePost($postId);
     $message = 'Posten ar nu borttagen';

@@ -1,12 +1,13 @@
 <?php
 session_start();
 require_once('services/blog_service.php');
-//Control if client is logged in (has a started session)
+//Check if client is logged in (has a started session)
 if (!isset($_SESSION['userId'])) {
     //If client is not logged in then redirect to login page 
-    header('Location: http://localhost/Projekt_Blogg/login.php');
+    header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/login.php');
 } else if (getUserBlog($_SESSION['userId']) === false) {
-    header('Location: http://localhost/Projekt_Blogg/create_blog.php');
+    //If the user that is logged in doesnt have a blog
+    header('Location: http://www.student.ltu.se/~frelab-8/Projekt_Blogg/create_blog.php');
 }
 ?>
 
@@ -27,23 +28,24 @@ if (!isset($_SESSION['userId'])) {
     <header>
         <?php
         /* Here is the page specific content that goes in to the header component */
-        $headerTitle = 'min blogg';
-        $navButton1 = 'inlägg';
-        $navButton2 = 'bilder';
+        $navButton1 = '';
+        $navButton2 = '';
         $navButton3 = '';
         /* Header component */
         require_once('components/header.php');
         ?>
     </header>
     <main class="main">
-        <div class="button--new-post">
+        <!-- Link to add a new post -->
+        <div class="link-container--new-post">
             <a href="./create_post.php" class="link--new-post">Skapa ny post</a>
         </div>
+        <!-- List with all the posts in the blog -->
         <ul class="list">
-            <?php 
-                require_once('services/post_service.php');
-                $blogId = getUserBlog($_SESSION['userId'])['id'];
-                viewAllPosts($blogId);
+            <?php
+            require_once('services/post_service.php');
+            $blogId = getUserBlog($_SESSION['userId'])['id'];
+            viewAllPosts($blogId);
             ?>
         </ul>
     </main>
