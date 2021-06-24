@@ -15,7 +15,7 @@ function viewBlogPosts($blogId)
     /* Create a li element for every post in the array of all the blogposts */
     foreach ($blogPosts as $value) {
         echo '<li class="list__item--post">
-                <a href=\'post.php?postId="' . $value['id'] . '" class="list__item--link">
+                <a href=\'post.php?postId="' . $value['id'] . '"\' class="list__item--link">
                     <div class="container-image">
                         <img src="' . $value['image'] . '" alt"" class="list__item--image">
                     </div>
@@ -33,7 +33,7 @@ $return blog title */
 function getBlogTitle($blogId)
 {
     global $db;
-    $query = getBlog(db_escape($db, $blogId));  //information about a specific blog
+    $query = getBlog($blogId);  //information about a specific blog
     $blog = db_select($db, $query);
     return $blog[0]['title'];
 }
@@ -127,4 +127,26 @@ function uploadImage() {
             $error = $_FILES['blog-image']['error'];
             //$message = $upload_errors[$error];
         }
+}
+
+/* Get the image of the blog
+$param blogId = the id of the specific blog
+$return blog image */
+function getBlogImage($blogId)
+{
+    global $db;
+    $query = getBlog($blogId);  //information about a specific blog
+    $blog = db_select($db, $query);
+    return $blog[0]['image'];
+}
+
+/* Get the description of the blog
+$param blogId = the id of the specific blog
+$return blog description */
+function getBlogDescription($blogId)
+{
+    global $db;
+    $query = getBlog($blogId);  //information about a specific blog
+    $blog = db_select($db, $query);
+    return $blog[0]['presentation'];
 }

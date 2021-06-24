@@ -36,6 +36,9 @@ require_once('services/blog_service.php');
                 viewBlogPosts($_GET['blogId']);
             ?>
         </ul>
+        <?php 
+            require_once('components/info.php');
+        ?>
     </div>
 </body>
 
