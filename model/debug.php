@@ -23,12 +23,12 @@ $columns = db_select($db, $query);
 console_log($columns);
 */
 
-/*
+
 $db = db_connect();
-$query = 'SELECT * FROM posts';
+$query = 'SELECT * FROM images';
 $columns = db_select($db, $query);
 console_log($columns);
-*/
+
 
 /*
 $db = db_connect();

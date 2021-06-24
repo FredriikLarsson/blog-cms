@@ -13,8 +13,8 @@ require_once('services/post_service.php');
     <link rel="stylesheet" href="style/post.css">
     <script type="module" src="js/post.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- The post title -->
     <title>
-        <!-- The post title -->
         <?php echo getPostTitle(); ?>
     </title>
 </head>

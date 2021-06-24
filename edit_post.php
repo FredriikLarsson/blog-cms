@@ -36,7 +36,7 @@
                 <button name="button-upload" type="button" id="button--upload" class="form__button">Ladda upp</button>
                 <!-- Button for creating a new post -->
                 <div class="form__button-container">
-                    <button name="edit-post" type="submit" id="button-new-post" class="form__button" value=<?php echo '\'' . $_GET['postId'] . '\'' ?>>Redigera posten</button>
+                    <button name="edit-post" type="submit" id="button-new-post" class="form__button" value=<?php echo $_GET['postId'] ?>>Redigera posten</button>
                 </div>
             </div>
         </form>

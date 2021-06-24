@@ -13,8 +13,8 @@ require_once('services/blog_service.php');
     <link rel="stylesheet" href="style/blog.css">
     <script type="module" src="js/blog.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Title of the blog -->
     <title>
-        <!-- Title of the blog -->
         <?php echo getBlogTitle($_GET['blogId']); ?>
     </title>
 </head>
