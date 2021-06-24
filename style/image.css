@@ -87,8 +87,8 @@ main {
 }
 
 
-
-.form-container-edit {
+/* Form for editing an image */
+.list__item--form-container {
   display: none;
 }
 

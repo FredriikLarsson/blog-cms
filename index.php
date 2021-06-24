@@ -10,22 +10,20 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/index.css">
-    <script type="module" src="js/index.js" defer></script>
+    <script type="module" src="js/index.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Nyheter</title>
 </head>
 
 <body>
-    <header>
-        <?php
-        /* Here is the page specific content that goes in to the header component */
-        $navButton1 = 'Senaste inlägg';
-        $navButton2 = 'Nya bloggare';
-        $navButton3 = 'Alla bloggar';
-        /* Header component */
-        require_once('components/header.php');
-        ?>
-    </header>
+    <?php
+    /* Here is the page specific content that goes in to the header component */
+    $navButton1 = 'Senaste inlägg';
+    $navButton2 = 'Nya bloggare';
+    $navButton3 = 'Alla bloggar';
+    /* Header component */
+    require_once('components/header.php');
+    ?>
     <div class="main-container">
         <!-- List with the 10 most newly created blogs -->
         <ul class="list" id="list__bloggers">

@@ -19,22 +19,20 @@ if (!isset($_SESSION['userId'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/image.css">
-    <script type="module" src="js/images.js" defer></script>
+    <script type="module" src="js/images.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Mina bilder</title>
 </head>
 
 <body>
-    <header>
-        <?php
-        /* Here is the page specific content that goes in to the header component */
-        $navButton1 = '';
-        $navButton2 = '';
-        $navButton3 = '';
-        /* Header component */
-        require_once('components/header.php');
-        ?>
-    </header>
+    <?php
+    /* Here is the page specific content that goes in to the header component */
+    $navButton1 = '';
+    $navButton2 = '';
+    $navButton3 = '';
+    /* Header component */
+    require_once('components/header.php');
+    ?>
     <main>
         <!-- Button to open form for uploading a new image -->
         <div class="button-container--upload">

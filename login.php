@@ -17,10 +17,10 @@
             <div class="form__input-container">
                 <!-- Inputfield for username -->
                 <label for="input-textfield-username">Användarnamn</label>
-                <input type="text" class="form__input" name="username" required>
+                <input type="text" class="form__input" name="username" id="input-textfield-username" required>
                 <!-- Inputfield for password -->
-                <label for="input-textfield-username">Lösenord</label>
-                <input type="password" class="form__input" name="password" minlength="6" required>
+                <label for="input-textfield-password">Lösenord</label>
+                <input type="password" class="form__input" name="password" id="input-textfield-password" minlength="6" required>
                 <!-- Msg to user if something went wrong with login or register -->
                 <p id="error-msg"></p>
                 <!-- Buttons to either login or register a new user -->
