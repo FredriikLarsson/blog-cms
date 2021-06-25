@@ -23,9 +23,16 @@ $columns = db_select($db, $query);
 console_log($columns);
 */
 
+/*
+$db = db_connect();
+$query = 'DELETE FROM users';
+$columns = db_query($db, $query);
+console_log($columns);
+*/
+
 
 $db = db_connect();
-$query = 'SELECT * FROM images';
+$query = 'SELECT * FROM blogs';
 $columns = db_select($db, $query);
 console_log($columns);
 

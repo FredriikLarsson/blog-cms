@@ -16,7 +16,7 @@ function viewAllImages($blogId)
         echo '<li class="list__item">
                 <div class="list__item-container">
                     <div class="list__item--image-container">
-                        <img src="' . $value['filename'] . '" alt"" class="list__item--image">
+                        <img src="' . $value['filename'] . '" alt="' . $value['description'] . '" class="list__item--image">
                     </div>
                     <div class="list__item--button-wrapper">
                         <div class="list__item--button-container">
