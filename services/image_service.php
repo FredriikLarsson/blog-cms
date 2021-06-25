@@ -75,9 +75,9 @@ function changeImage($imageId, $altText)
 {
     global $db;
     $query = alterImageText(db_escape($db, $imageId), db_escape($db, $altText));
-    $query_filepath = selectImage(db_escape($db, $imageId)); //sql query for getting one image
-    $filename = db_select($db, $query_filepath)[0]['filename']; //get the image filename
-    if (file_exists($_SERVER['DOCUMENT_ROOT'] . $filename)) {
+    $query_filename = selectImage(db_escape($db, $imageId)); //sql query for getting one image
+    $filename = db_select($db, $query_filename)[0]['name']; //get the image filename
+    if (file_exists(__DIR__ . '/../uploads/' . $_SESSION['userId'] . '/' . $filename)) {
         db_query($db, $query);
         return true;
     } else {
